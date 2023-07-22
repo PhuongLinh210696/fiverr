@@ -16,5 +16,6 @@ Các thư viện cần cại đặt
 - redux-toolkit: npm install @reduxjs/toolkit, npm install react-redux
 - ant.design: npm install antd --save
 - tailwindcss.com: npm install -D tailwindcss,npx tailwindcss init (https://tailwindcss.com/docs/guides/create-react-app)
+-infinite-react-carousel: npm i infinite-react-carousel -
 - sass: npm i sass sass-loader
 
