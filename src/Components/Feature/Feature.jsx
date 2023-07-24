@@ -1,6 +1,7 @@
 import React from "react";
-
+import * as HinhAnh from '../../Assets/Image'
 const Feature = () => {
+  console.log(HinhAnh.Images.man);
   return (
     <div className=" bg-green-900 ">
       <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-between ">
@@ -73,7 +74,7 @@ const Feature = () => {
         <div className="w-2/5">
           <img
             // classname="h-auto w-full rounded-lg"
-            src="../../Assets/Image/man.png"
+            src={HinhAnh.Images.man}
             alt
           />
         </div>

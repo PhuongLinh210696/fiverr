@@ -13,3 +13,7 @@ export const saveLocal = (key,value) => {
         return null;
     }
   }
+
+  export const deleteLocal = (key) => { 
+    localStorage.removeItem(key);
+   }

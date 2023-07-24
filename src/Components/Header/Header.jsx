@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import SignUp from "../SignUp/SignUp";
+import { useSelector } from "react-redux";
+import SignIn from "../SignIn/SignIn";
+import {deleteLocal} from "../../Utils/localStore"
+import * as HinhAnh from '../../Assets/Image'
 
 const Header = () => {
+  const { userName } = useSelector((state) => state.user);
+  console.log(userName);
   const [active, setActive] = useState(false);
   const { pathname } = useLocation;
   const isActice = () => {
@@ -21,6 +27,11 @@ const Header = () => {
     isSeler: true,
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    deleteLocal('user');
+    window.location.reload();
+  }
   return (
     <nav
       className={
@@ -101,7 +112,9 @@ const Header = () => {
               <button
                 data-modal-target="authentication-modal"
                 data-modal-toggle="authentication-modal"
-                className="text-white bg-transparent font-medium rounded-lg py-2 text-center md:mr-0 border-white"
+                className={
+                    active || pathname == "/" ? "text-gray-500 bg-transparent font-medium rounded-lg py-2 text-center md:mr-0 border-white" : "text-white bg-transparent font-medium rounded-lg py-2 text-center md:mr-0 border-white"
+                }
                 type="button"
               >
                 Sign In
@@ -117,35 +130,68 @@ const Header = () => {
                   {/* Modal content */}
                   <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <div className="w-full flex">
-                    <div className="w-1/2">
+                      <div className="w-1/2">
                         <div className="relative">
-                        <img className="object-cover w-full h-full rounded-l-lg" src="https://fiverr-res.cloudinary.com/npm-assets/layout-server/standard.c6d3ba7.png" alt="" />
+                          <img
+                            className="object-cover w-full h-full rounded-l-lg"
+                            src="https://fiverr-res.cloudinary.com/npm-assets/layout-server/standard.c6d3ba7.png"
+                            alt=""
+                          />
                         </div>
-                        
-                    </div>
-                    <div className="w-1/2">
-                        <SignUp/>
-                    </div>
-                      
+                      </div>
+                      <div className="w-1/2">
+                        <SignUp />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
             <div class="flex md:order-2">
-              {!currentUser && (
-                <button
-                  type="button"
-                  class="text-white bg-transparent hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg  px-4 py-2 text-center mr-3 md:mr-0 border-solid border-2 border-white"
-                >
-                  Join
-                </button>
+              {!userName && (
+                <>
+                  <button
+                    data-modal-target="authentication-modal-signin"
+                    data-modal-toggle="authentication-modal-signin"
+                    type="button"
+                    class="text-white bg-transparent hover:bg-green-700 focus:outline-none font-medium rounded-lg  px-4 py-2 text-center mr-3 md:mr-0 border-solid border-2 border-white"
+                  >
+                    Join
+                  </button>
+                  {/* Main modal */}
+                  <div
+                    id="authentication-modal-signin"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    className="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+                  >
+                    <div className="relative w-full max-w-3xl max-h-full">
+                      {/* Modal content */}
+                      <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <div className="w-full flex">
+                          <div className="w-1/2">
+                            <div className="relative">
+                              <img
+                                className="object-cover w-full h-full rounded-l-lg"
+                                src="https://fiverr-res.cloudinary.com/npm-assets/layout-server/standard.c6d3ba7.png"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div className="w-1/2">
+                            <SignIn/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </>
               )}
-              {currentUser && (
+              {userName && (
                 <div>
                   <button
                     type="button"
-                    className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                    className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0"
                     id="user-menu-button"
                     aria-expanded="false"
                     data-dropdown-toggle="user-dropdown"
@@ -154,7 +200,7 @@ const Header = () => {
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="w-8 h-8 rounded-full"
-                      src="/docs/images/people/profile-picture-3.jpg"
+                      src={HinhAnh.Images.empty}
                       alt="user photo"
                     />
                   </button>
@@ -165,7 +211,8 @@ const Header = () => {
                   >
                     <div className="px-4 py-3">
                       <span className="block text-sm text-gray-900 dark:text-white">
-                        {currentUser.userName}
+                        {/* {currentUser.userName} */}
+                        {userName.user.name}
                       </span>
                     </div>
                     <ul className="py-2" aria-labelledby="user-menu-button">
@@ -210,6 +257,7 @@ const Header = () => {
                         <a
                           href="#"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                          onClick={handleClick}
                         >
                           Sign out
                         </a>
