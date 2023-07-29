@@ -4,7 +4,7 @@ import "./PopularServices.scss";
 import CardServices from "../CardServices/CardServices";
 import { cards } from "../../Assets/Data/cards";
 const PopularServices = () => {
-  console.log(cards);
+  // console.log(cards);
   return (
     <div>
       <h1 className="max-w-screen-xl mx-auto pl-4 pt-12 text-3xl font-bold text-gray-500">Popular Services</h1>
