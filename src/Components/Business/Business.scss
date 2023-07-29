@@ -1,0 +1,280 @@
+.b-container {
+    background-color: #0d084d;
+    margin: 0 auto 24px;
+
+    @media screen and (min-width: 600px) {
+        margin-bottom: 80px;
+    }
+
+    @media screen and (min-width: 900px) {
+        margin-bottom: 96px;
+    }
+
+    .b-content {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 24px 24px 48px;
+        width: 100%;
+        padding-bottom: 48px;
+        padding-top: 48px;
+
+        @media screen and (min-width: 600px) {
+            margin: 0;
+            padding: 32px 32px 64px;
+        }
+
+        @media screen and (min-width: 900px) {
+            padding-bottom: 64px;
+            padding-top: 64px;
+        }
+
+        @media screen and (min-width: 1160px) {
+            margin: 0 auto;
+            max-width: 1400px;
+            padding-bottom: 96px;
+            padding-top: 96px;
+        }
+
+        @media screen and (min-width: 1760px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .b-grid {
+            display: flex;
+            flex: 0 1 auto;
+            flex-flow: row wrap;
+            margin-left: -6px;
+            margin-right: -6px;
+            position: relative;
+
+            @media screen and (min-width: 600px) {
+                margin-left: -8px;
+                margin-right: -8px;
+            }
+
+            @media screen and (min-width: 900px) {
+                margin-left: -8px;
+                margin-right: -8px;
+            }
+
+            @media screen and (min-width: 1160px) {
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+
+            @media screen and (min-width: 1760px) {
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+
+            .b-left {
+                box-sizing: border-box;
+                flex: 0 0 auto;
+                flex-basis: 100%;
+                max-width: 100%;
+                padding: 0 6px;
+                color: #fff;
+                padding-right: 5%;
+
+                @media screen and (min-width: 600px) {
+                    padding: 0 8px;
+                }
+
+                @media screen and (min-width: 900px) {
+                    flex-basis: 46.66667%;
+                    max-width: 46.66667%;
+                    padding: 0 8px;
+                }
+
+                @media screen and (min-width: 1160px) {
+                    padding: 0 16px;
+                }
+
+                @media screen and (min-width: 1760px) {
+                    padding: 0 16px;
+                }
+
+                small {
+                    display: block;
+                    padding-bottom: 32px;
+
+                    .fiverr-b-logo {
+                        display: inline-block;
+                        margin-right: 10px;
+                        vertical-align: top;
+
+                        svg {
+                            height: 22px;
+                            width: 178px;
+                        }
+                    }
+
+                    span {
+                        justify-content: center;
+                        line-height: 100%;
+                        padding: 3px 7px 2px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-flex;
+                        font-size: 10px;
+                        font-weight: 700;
+                        box-sizing: border-box;
+                        align-items: center;
+                        background: #fff;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius: 999px;
+                        text-transform: uppercase;
+                        border-color: rgb(88, 74, 255);
+                        background-color: rgb(88, 74, 255);
+                        color: rgb(255, 255, 255);
+                    }
+                }
+
+                h2 {
+                    font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 130%;
+                    padding-bottom: 20px;
+                    color: #fff;
+
+                    @media screen and (min-width: 600px) {
+                        font-size: 32px;
+                        line-height: 120%;
+                    }
+
+                    @media screen and (min-width: 900px) {
+                        padding-bottom: 24px;
+                        max-width: 450px;
+                    }
+
+                    i {
+                        font-family: DomaineDisplay, Helvetica Neue, Helvetica, Arial, sans-serif;
+                        font-weight: 500;
+                    }
+                }
+
+                .b-desc {
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: #fff;
+                    padding-bottom: 16px;
+
+                    @media screen and (min-width: 900px) {
+                        max-width: 450px;
+                        padding-bottom: 32px;
+                    }
+                }
+
+                ul {
+                    margin-bottom: 36px;
+
+                    @media screen and (min-width: 900px) {
+                        margin-bottom: 48px;
+                    }
+
+                    li {
+                        display: flex;
+                        padding-bottom: 16px;
+
+                        @media screen and (min-width: 600px) {
+                            padding-bottom: 12px;
+                        }
+
+                        span {
+                            background: none;
+                            border: none;
+                            display: inline-block;
+                            margin: 0;
+                            padding: 0;
+                            margin-right: 10px;
+                            min-width: 24px;
+                            width: 24px;
+                            height: 24px;
+                            fill: rgb(122, 125, 133);
+
+                            svg {
+                                float: left;
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .b-link {
+                    color: #fff;
+                    background-color: #1dbf73;
+                    transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 100%;
+                    padding: 12px 24px;
+                    position: relative;
+                    text-align: center;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                    text-decoration: none;
+
+                    &:hover {
+                        background: #19a463;
+                    }
+                }
+
+            }
+
+        }
+
+        .b-right {
+            box-sizing: border-box;
+            flex-basis: 100%;
+            max-width: 100%;
+            padding: 0 6px;
+            flex: 0 0 auto;
+            flex-basis: 100%;
+            max-width: 100%;
+            margin-top: 32px;
+
+            @media screen and (min-width: 600px) {
+                padding: 0 8px;
+                margin-top: 48px;
+            }
+
+            @media screen and (min-width: 900px) {
+                flex-basis: 53.33333%;
+                max-width: 53.33333%;
+                margin-top: 0;
+                padding: 0 8px;
+            }
+
+            @media screen and (min-width: 1160px) {
+                padding: 0 16px;
+            }
+
+            @media screen and (min-width: 1760px) {
+                padding: 0 16px;
+            }
+
+            img {
+                width: 100%;
+
+                @media screen and (min-width: 900px) {
+                    margin: 0 -16px 0 0;
+                    width: calc(100% + 16px);
+                }
+
+                @media screen and (min-width: 1560px) {
+                    margin: 0 -140px -32px 0;
+                    width: calc(100% + 140px);
+                }
+            }
+        }
+
+
+    }
+}
