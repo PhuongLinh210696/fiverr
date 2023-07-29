@@ -1,0 +1,96 @@
+.ynwg-container {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto 24px;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    @media screen and (min-width: 600px) {
+        margin: 0;
+        padding: 32px 32px 64px;
+        margin-bottom: 80px;
+    }
+
+    @media screen and (min-width: 900px) {
+        margin-bottom: 96px;
+    }
+
+    @media screen and (min-width: 1160px) {
+        margin: 0 auto;
+        max-width: 1400px;
+    }
+
+    h2 {
+        color: #404145;
+        font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 130%;
+        padding-bottom: 20px;
+
+        @media screen and (min-width: 600px) {
+            font-size: 32px;
+            line-height: 120%;
+        }
+
+        @media screen and (min-width: 900px) {
+            padding-bottom: 24px;
+        }
+    }
+
+    .ynwg-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            box-sizing: border-box;
+            padding: 0 10px 32px;
+            text-align: center;
+            width: 50%;
+
+            @media screen and (min-width: 600px) {
+                padding-bottom: 55px;
+                width: 33.33%;
+            }
+
+            @media screen and (min-width: 900px) {
+                width: 20%;
+            }
+
+            >a {
+                transition: color .2s;
+                text-decoration: none;
+                color: #222325;
+                display: inline-block;
+                position: relative;
+                text-align: center;
+
+                &::after {
+                    border-bottom: 2px solid #c5c6c9;
+                    content: "";
+                    padding: 0 0 8px;
+                    position: absolute;
+                    right: 50%;
+                    top: 45px;
+                    transform: translateX(50%);
+                    width: 48px;
+                }
+
+                &:hover:after {
+                    border-color: #1dbf73;
+                    padding: 0 40px 8px;
+                    transition: border-color .2s ease-in-out, padding .2s ease-in-out;
+                }
+
+                
+
+                img {
+                    display: block;
+                    height: 48px;
+                    margin: 0 auto 15px;
+                    width: 48px;
+                }
+            }
+        }
+    }
+}
