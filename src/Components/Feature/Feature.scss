@@ -1,0 +1,13 @@
+.f-container {
+    margin-bottom: 0!important;
+    position: relative;
+    margin: 0 auto 24px;
+    background-color: #0a4226;
+
+    @media screen and (min-width: 600px) {
+        margin-bottom: 80px;
+    }
+    @media screen and (min-width: 900px) {
+        margin-bottom: 96px;
+    }
+}
