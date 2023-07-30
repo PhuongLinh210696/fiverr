@@ -1,0 +1,135 @@
+footer {
+    background-color: #fff;
+    border-top: 1px solid #e4e5e7;
+    position: relative;
+
+    .f-warp {
+        box-sizing: border-box;
+        padding: 24px 24px 48px;
+        width: 100%;
+        padding-bottom: 24px;
+        margin: 0 auto;
+
+        @media screen and (min-width: 600px) {
+            margin: 0;
+            padding: 32px 32px 64px;
+            padding-bottom: 24px;
+            padding-top: 64px;
+        }
+
+        @media screen and (min-width: 1160px) {
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        @media screen and (min-width: 1760px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .f-grid {
+            display: flex;
+            flex: 0 1 auto;
+            flex-flow: row wrap;
+            margin-left: -6px;
+            margin-right: -6px;
+            position: relative;
+            margin-bottom: 8px;
+
+            @media screen and (min-width: 600px) {
+                margin-left: -8px;
+                margin-right: -8px;
+            }
+
+            @media screen and (min-width: 900px) {
+                margin-left: -8px;
+                margin-right: -8px;
+            }
+
+            @media screen and (min-width: 1160px) {
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+
+            @media screen and (min-width: 1760px) {
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+
+            .f-col {
+                flex-basis: 100%;
+                max-width: 100%;
+
+                @media screen and (min-width: 600px) {
+                    flex-basis: 33.33333%;
+                    max-width: 33.33333%;
+                    padding: 0 8px;
+                }
+
+                @media screen and (min-width: 900px) {
+                    flex-basis: 20%;
+                    max-width: 20%;
+                    padding: 0 8px;
+                }
+
+                @media screen and (min-width: 1160px) {
+                    padding: 0 16px;
+                }
+
+                @media screen and (min-width: 1760px) {
+                    padding: 0 16px;
+                }
+            }
+        }
+
+        .bt {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            min-width: 0;
+
+            .left-bt {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                min-width: 0;
+                padding: 16px 0 0;
+                width: 100%;
+
+                @media screen and (min-width: 600px) {
+                    flex-direction: row;
+                    width: auto;
+                }
+
+                .txt-bt {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    margin-top: 8px;
+                    min-width: 0;
+                    white-space: nowrap;
+
+                    @media screen and (min-width: 600px) {
+                        margin-left: 24px;
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            .right-bt {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                padding-top: 16px;
+                width: 100%;
+
+                @media screen and (min-width: 600px) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    width: auto;
+                }
+            }
+        }
+    }
+}

@@ -3,9 +3,9 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-gray-900">
-      <div className="mx-auto w-full max-w-screen-xl">
-        <div className="grid grid-cols-5 px-4 py-6 lg:py-8 md:grid-cols-5">
-          <div>
+      <div className="mx-auto w-full max-w-screen-xl f-warp">
+        <div className="grid grid-cols-5 px-4 py-6 lg:py-8 md:grid-cols-5 f-grid">
+          <div className="f-col">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               Categories
             </h2>
@@ -72,7 +72,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="f-col">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               About
             </h2>
@@ -114,7 +114,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          <div vclassName="f-col">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               Support
             </h2>
@@ -146,7 +146,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="f-col">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               Community
             </h2>
@@ -208,7 +208,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="f-col">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               More From Fiverr
             </h2>
@@ -275,8 +275,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="px-4 py-6 border-t-2 md:flex md:items-center md:justify-between">
-          <div className="text-sm text-gray-500 dark:text-gray-300 sm:text-center flex items-center">
+        <div className="px-4 py-6 border-t-2 md:flex md:items-center md:justify-between bt">
+          <div className="text-sm text-gray-500 dark:text-gray-300 sm:text-center flex items-center left-bt">
             <svg
               width="91"
               height="27"
@@ -291,10 +291,10 @@ const Footer = () => {
                 <path d="m90.4 23.3c0 2.1-1.6 3.7-3.8 3.7s-3.8-1.6-3.8-3.7 1.6-3.7 3.8-3.7c2.2-.1 3.8 1.5 3.8 3.7zm-.7 0c0-1.8-1.3-3.1-3.1-3.1s-3.1 1.3-3.1 3.1 1.3 3.1 3.1 3.1 3.1-1.4 3.1-3.1zm-1.7.8.1.9h-.7l-.1-.9c0-.3-.2-.5-.5-.5h-.8v1.4h-.7v-3.5h1.4c.7 0 1.2.4 1.2 1.1 0 .4-.2.6-.5.8.4.1.5.3.6.7zm-1.9-1h.7c.4 0 .5-.3.5-.5 0-.3-.2-.5-.5-.5h-.7z"></path>
               </g>
             </svg>
-            <span className="ml-10 text-gray-300">© Fiverr International Ltd. 2023</span>
+            <span className="ml-10 text-gray-300 txt-bt">© Fiverr International Ltd. 2023</span>
           </div>
 
-          <div className="flex mt-4 space-x-5 sm:justify-center md:mt-0">
+          <div className="flex mt-4 space-x-5 sm:justify-center md:mt-0 right-bt">
             <a
               href="#"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
