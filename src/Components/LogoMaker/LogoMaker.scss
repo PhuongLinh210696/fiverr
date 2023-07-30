@@ -1,0 +1,157 @@
+.logo-container {
+    box-sizing: border-box;
+    padding: 24px 24px 48px;
+    width: 100%;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin: 0 auto 24px;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media screen and (min-width: 600px) {
+        margin: 0;
+        padding: 32px 32px 64px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    @media screen and (min-width: 900px) {
+        margin-bottom: 96px;
+    }
+
+    @media screen and (min-width: 1160px) {
+        margin: 0 auto;
+        max-width: 1400px;
+    }
+
+    @media screen and (min-width: 1760px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .logo-banner {
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        background-color: #446ee7;
+        color: #fff;
+
+        @media screen and (min-width: 900px) {
+            flex-direction: row;
+        }
+
+        .logo-desc {
+            flex-shrink: 0;
+            padding: 48px 24px;
+            position: relative;
+            z-index: 1;
+
+            @media screen and (min-width: 600px) {
+                padding: 36px 0 36px 32px;
+            }
+
+            @media screen and (min-width: 1160px) {
+                padding-left: 76px;
+            }
+
+            small {
+                display: block;
+                padding-bottom: 16px;
+
+                i {
+                    display: inline-block;
+                    margin-right: 10px;
+                    vertical-align: top;
+
+                    svg {
+                        height: 26px;
+                        width: 188px;
+                    }
+                }
+            }
+
+            h2 {
+                color: #fff;
+                font-size: 34px;
+                line-height: 39px;
+                margin-bottom: 8px;
+                font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-weight: 700;
+                padding-bottom: 0;
+
+                @media screen and (min-width: 600px) {
+                    font-size: 32px;
+                    line-height: 120%;
+                }
+
+                @media screen and (min-width: 900px) {
+                    padding-bottom: 24px;
+                }
+
+                i {
+                    font-family: DomaineDisplay, Helvetica Neue, Helvetica, Arial, sans-serif;
+                    font-weight: 500;
+                }
+            }
+
+            .desc {
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 24px;
+            }
+
+            a {
+                background-color: #fff;
+                color: #446ee7;
+                transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                border: 1px solid transparent;
+                border-radius: 4px;
+                box-sizing: border-box;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 100%;
+                padding: 12px 24px;
+                position: relative;
+                text-align: center;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: #d4defb;
+                    color: #3f63c8;
+                    outline: none;
+                }
+            }
+        }
+
+        .mobile-image {
+            display: flex;
+            justify-content: flex-end;
+
+            @media screen and (min-width: 900px) {
+                display: none;
+            }
+        }
+
+        .desktop-image {
+            align-items: center;
+            bottom: 0;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: flex-end;
+            left: -10%;
+            position: absolute;
+            right: -10%;
+            top: 0;
+
+            @media screen and (min-width: 1160px) {
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+}
