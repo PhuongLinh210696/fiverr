@@ -6,7 +6,8 @@ import { cards } from "../../Assets/Data/cards";
 const PopularServices = () => {
   // console.log(cards);
   return (
-    <div>
+    <div className="p-container">
+      <div className="p-loop">
       <h1 className="max-w-screen-xl mx-auto pl-4 pt-12 text-3xl font-bold text-gray-500">Popular Services</h1>
       <div className="flex justify-center pt-3">
         <div className="relative w-11/12 left-3">
@@ -18,6 +19,7 @@ const PopularServices = () => {
             ))}
           </Slider>
         </div>
+      </div>
       </div>
     </div>
   );
