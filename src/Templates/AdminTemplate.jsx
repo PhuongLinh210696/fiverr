@@ -46,7 +46,7 @@ const AdminTemplate = () => {
             {
               key: "1",
               icon: <UserOutlined />,
-              label: <NavLink to="/admin/user">User</NavLink>,
+              label: <NavLink to="/admin/users">Users</NavLink>,
             },
             {
               key: "2",

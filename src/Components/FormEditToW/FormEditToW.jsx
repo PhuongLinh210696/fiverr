@@ -20,14 +20,15 @@ const FormEditToW = ({ id }) => {
         onSubmit: async (values, action) => {
             try {
                 const updatedToW = { ...initialToW, tenLoaiCongViec: values.tenLoaiCongViec };
+                //console.log(initialToW);
                 const res = await towService.updateTow(values, id);
-                //await dispatch(updateTow({id,updatedToW}));
+                //await dispatch(updateTow({id,values}));
                 console.log(values);
                 // const res = await towService.addTow(values);
                 dispatch(getAllTow());
                 //Reset Form
                 window.location.reload();
-                console.log(res);
+                //console.log(res);
             } catch (error) {
                 console.log(error);
             }

@@ -4,12 +4,12 @@ const Footer = () => {
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl f-warp">
-        <div className="grid grid-cols-5 px-4 py-6 lg:py-8 md:grid-cols-5 f-grid">
+        <div className="grid grid-cols-5 px-4 py-6 lg:py-8 md:grid-cols-5 f-grid sm:grid-cols-5 f-grid">
           <div className="f-col">
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white sm:text-xs">
               Categories
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-gray-500 dark:text-gray-400 font-medium ">
               <li className="mb-4">
                 <a href="#" className=" hover:underline">
                   Graphics & Design

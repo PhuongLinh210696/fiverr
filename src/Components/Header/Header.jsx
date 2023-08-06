@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import SignUp from "../SignUp/SignUp";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import SignIn from "../SignIn/SignIn";
 import { deleteLocal } from "../../Utils/localStore"
 import * as HinhAnh from '../../Assets/Image'
 import './Header.scss'
 import { Modal } from "antd"
+import { getAllUsers } from "../../Redux/slices/userSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+    const { users } = useSelector((state) => state.users)
+    useEffect(() => {
+      console.log(dispatch(getAllUsers()))
+        
+    }, []);
+
   const { userName } = useSelector((state) => state.user);
   console.log(userName);
   const [active, setActive] = useState(false);

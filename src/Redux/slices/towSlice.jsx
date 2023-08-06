@@ -9,7 +9,7 @@ export const getAllTow = createAsyncThunk('typeOfWorks/getAllTow',
     })
 
 export const updateTow = createAsyncThunk('typeOfWorks/updateTow',
-    async ({ id, updateToW }) => {
+    async ({ updateToW,id}) => {
         const res = await towService.updateTow(updateToW, id);
         //return về giá trị muốn store lưu trữ
         return res.data.content
@@ -46,7 +46,7 @@ export const towSlice = createSlice({
         });
         builder.addCase(updateTow.fulfilled,(state,action) => { 
             const updatedToW = action.payload;
-            const towIndex = state.tows.findIndex(tow => tow.id === updatedToW.id);
+            const towIndex = state.tows.findIndex(tow => tow.id == updatedToW.id);
             if (towIndex !== -1) {
                 state.tows[towIndex] = updatedToW;
             }
