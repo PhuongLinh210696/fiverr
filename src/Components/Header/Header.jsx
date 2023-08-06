@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import SignIn from "../SignIn/SignIn";
 import { deleteLocal } from "../../Utils/localStore"
 import * as HinhAnh from '../../Assets/Image'
-import './Header.scss'
+//import './Header.scss'
 
 const Header = () => {
   const { userName } = useSelector((state) => state.user);
@@ -60,11 +60,16 @@ const Header = () => {
           <div className="h-search">
             <div className="search-bar">
               <form>
-                  <input type="search" className="long-placeholder" autoComplete="off" placeholder="What service are you looking for today?" defaultValue />
-                  <input type="search" className="short-placeholder" autoComplete="off" placeholder="Find services" defaultValue />
-                  <button className="s-btn">
-                    <div className="submit-button-icon"><svg width={16} height={16} viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentFill"><path d="m15.89 14.653-3.793-3.794a.37.37 0 0 0-.266-.109h-.412A6.499 6.499 0 0 0 6.5 0C2.91 0 0 2.91 0 6.5a6.499 6.499 0 0 0 10.75 4.919v.412c0 .1.04.194.11.266l3.793 3.794a.375.375 0 0 0 .531 0l.707-.707a.375.375 0 0 0 0-.53ZM6.5 11.5c-2.763 0-5-2.238-5-5 0-2.763 2.237-5 5-5 2.762 0 5 2.237 5 5 0 2.762-2.238 5-5 5Z" /></svg></div>
-                  </button>
+                <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                  </div>
+                  <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required/>
+                    <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                </div>
               </form>
             </div>
           </div>
@@ -109,7 +114,7 @@ const Header = () => {
               </li>
               {!currentUser?.isSeler && (
                 <li>
-                  <a
+                  <NavLink
                     href="#"
                     className={
                       active || pathname == "/"
@@ -118,7 +123,7 @@ const Header = () => {
                     }
                   >
                     Become a Seller
-                  </a>
+                  </NavLink>
                 </li>
               )}
               <li>
