@@ -11,14 +11,14 @@ const SignIn = () => {
       password: "",
       email: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values,action) => {
       console.log(values);
       authSer
         .signin(values)
         .then((res) => {
           console.log(res);
           saveLocal('user',res.data.content)
-          messageApi.success("Đăng nhập thành công!!!");
+          messageApi.success("Successfully sign in!!!");
           setTimeout(() => {
             // navigate("/login");
             window.location.reload();
@@ -26,7 +26,8 @@ const SignIn = () => {
         })
         .catch((err) => {
           console.log(err);
-          messageApi.success("Đăng nhập thất bại!!!");
+          messageApi.error("Login failed!!!");
+          action.resetForm();
         });
     },
     validationSchema: yup.object({

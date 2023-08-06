@@ -1,5 +1,5 @@
-import React, {useState,useEffect} from 'react';
-import { NavLink, Outlet } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { NavLink, Outlet,useNavigate } from "react-router-dom";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -8,12 +8,32 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
+import { getData } from '../Utils/localStore'
 const { Header, Sider, Content } = Layout;
+
+
 const AdminTemplate = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+  //Login
+  const navigate = useNavigate();
+  useEffect(() => { 
+    //Call local
+    const user = getData('user');
+    //1 no data =>redirect UserTemplate
+    //2 roles not Admin => redirect UserTemplate
+    if(user){
+      console.log(user.user);
+      if(user.user.role != "ADMIN"){
+        navigate("/");
+      }
+    }else{
+      navigate("/");
+    }
+   },[])
+
   return (
     <Layout className="min-h-screen">
       <Sider trigger={null} collapsible collapsed={collapsed}>

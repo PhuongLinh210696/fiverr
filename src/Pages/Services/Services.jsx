@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Drawer } from "antd";
+import { Button, Drawer, Modal } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from 'react-redux';
 import TableServices from '../../Components/TableServices/TableServices';
@@ -21,6 +21,18 @@ const Services = () => {
     const onClose = () => {
         setOpen(false);
     };
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div>
             {/* <button
@@ -30,6 +42,17 @@ const Services = () => {
             >
                 New TypeOfWorks
             </button> */}
+            
+            <button type="primary" onClick={showModal}>
+                Open Modal
+            </button>
+            <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+            </Modal>
+
+
             <Drawer
                 title="Add Type of Works"
                 placement="right"

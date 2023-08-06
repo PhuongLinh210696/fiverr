@@ -5,7 +5,8 @@ import { useSelector } from "react-redux";
 import SignIn from "../SignIn/SignIn";
 import { deleteLocal } from "../../Utils/localStore"
 import * as HinhAnh from '../../Assets/Image'
-//import './Header.scss'
+import './Header.scss'
+import { Modal } from "antd"
 
 const Header = () => {
   const { userName } = useSelector((state) => state.user);
@@ -33,6 +34,30 @@ const Header = () => {
     deleteLocal('user');
     window.location.reload();
   }
+
+  //Modal Ant-design
+  //SigIn
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+  //Join
+  const [isModalOpenJoin, setIsModalOpenJoin] = useState(false);
+  const showModalJoin = () => {
+    setIsModalOpenJoin(true);
+  };
+  const handleOkJoin = () => {
+    setIsModalOpenJoin(false);
+  };
+  const handleCancelJoin = () => {
+    setIsModalOpenJoin(false);
+  };
   return (
     <nav
       className={
@@ -67,8 +92,8 @@ const Header = () => {
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                     </svg>
                   </div>
-                  <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required/>
-                    <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                  <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
+                  <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                 </div>
               </form>
             </div>
@@ -133,37 +158,14 @@ const Header = () => {
                   className={
                     active || pathname == "/" ? "text-gray-500 bg-transparent font-medium rounded-lg py-2 text-center md:mr-0 border-white" : "text-white bg-transparent font-medium rounded-lg py-2 text-center md:mr-0 border-white"
                   }
-                  type="button"
+                  onClick={showModal}
                 >
                   Sign In
                 </button>
-                {/* Main modal */}
-                <div
-                  id="authentication-modal"
-                  tabIndex={-1}
-                  aria-hidden="true"
-                  className="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
-                >
-                  <div className="relative w-full max-w-3xl max-h-full">
-                    {/* Modal content */}
-                    <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                      <div className="w-full flex">
-                        <div className="w-1/2">
-                          <div className="relative">
-                            <img
-                              className="object-cover w-full h-full rounded-l-lg"
-                              src="https://fiverr-res.cloudinary.com/npm-assets/layout-server/standard.c6d3ba7.png"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <div className="w-1/2">
-                          <SignUp />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                  <SignUp />
+                </Modal>
+
               </li>
               <div class="flex md:order-2">
                 {!userName && (
@@ -171,38 +173,14 @@ const Header = () => {
                     <button
                       data-modal-target="authentication-modal-signin"
                       data-modal-toggle="authentication-modal-signin"
-                      type="button"
                       class="text-white bg-transparent hover:bg-green-700 focus:outline-none font-medium rounded-lg  px-4 py-2 text-center mr-3 md:mr-0 border-solid border-2 border-white"
+                      onClick={showModalJoin}
                     >
                       Join
                     </button>
-                    {/* Main modal */}
-                    <div
-                      id="authentication-modal-signin"
-                      tabIndex={-1}
-                      aria-hidden="true"
-                      className="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
-                    >
-                      <div className="relative w-full max-w-3xl max-h-full">
-                        {/* Modal content */}
-                        <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                          <div className="w-full flex">
-                            <div className="w-1/2">
-                              <div className="relative">
-                                <img
-                                  className="object-cover w-full h-full rounded-l-lg"
-                                  src="https://fiverr-res.cloudinary.com/npm-assets/layout-server/standard.c6d3ba7.png"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            <div className="w-1/2">
-                              <SignIn />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <Modal open={isModalOpenJoin} onOk={handleOkJoin} onCancel={handleCancelJoin}>
+                      <SignIn />
+                    </Modal>
                   </>
                 )}
                 {userName && (
