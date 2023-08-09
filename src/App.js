@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<UserTemplate/>}>
           <Route index element={<HomePage/>}/>
-          <Route path="cate" element={<Categories/>}/>
+          <Route path="Categories/:id" element={<Categories/>}/>
         </Route>
         <Route path="/admin" element={<AdminTemplate/>}>
             <Route path="typeofworks" element={<TypeOfWorks/>}/>
