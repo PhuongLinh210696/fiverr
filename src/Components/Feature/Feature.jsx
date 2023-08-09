@@ -2,7 +2,7 @@ import React from "react";
 import * as HinhAnh from '../../Assets/Image'
 import './Feature.scss'
 const Feature = () => {
-  console.log(HinhAnh.Images.man);
+  // console.log(HinhAnh.Images.man);
   return (
     <div className=" bg-green-900 f-container">
       <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-between f-max">

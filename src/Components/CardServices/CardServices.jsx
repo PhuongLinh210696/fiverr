@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const CardServices = ({card}) => {
-    console.log(card)
+    // console.log(card)
   return (
     
     <NavLink to="/gigs?cat=design">

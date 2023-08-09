@@ -3,7 +3,7 @@ import React from 'react'
 
 const VideoServices = ({card, onClick}) => {
     
-    console.log(card);
+    // console.log(card);
   return (
     <div className='v-grid'>
         <div className='video-left'>
