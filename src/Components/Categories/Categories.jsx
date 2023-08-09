@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Categories.scss'
 import CategoryVideo from './CategoryVideo';
 import CategoriesVideoModel from './CategoriesVideoModel';
 import Slider from 'infinite-react-carousel';
 import { popular } from '../../Assets/Data/cards';
 import CategoriesService from './CategoriesService';
+import { getWMenuByWId } from '../../Redux/slices/wSlice';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { wService } from '../../Services/wService';
 
 const Categories = () => {
   const [showVideoModel, setShowVideoModel] = useState(false);
   const [selectedPopular, setSelectedPopular] = useState(null);
+
+  const dispatch = useDispatch();
+  const categoryData = useSelector(state => state.works.ws);
+  const { id } = useParams();
 
   const openVideoModal = () => {
     setShowVideoModel(true);
@@ -18,6 +26,22 @@ const Categories = () => {
     setShowVideoModel(false);
   };
 
+  const [wDData, setWDData] = useState([]);
+  useEffect(() => {
+    console.log(id)
+    async function fetchWDData() {
+      try {
+        const response = await wService.getWMenuByWId(id);
+        const data = response.data.content;
+        setWDData(data);
+        // console.log(data)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    fetchWDData();
+  }, [dispatch, id]);
 
   return (
     <>
@@ -26,7 +50,12 @@ const Categories = () => {
           <div className='categories-banner'>
             <div className='banner'>
               <div className='banner-content'>
-                <h1 class="title">Graphics &amp; Design</h1>
+                {wDData.map((item) => (
+                  <h1 class="title" key={item.id}>
+                    {item.tenLoaiCongViec}
+                  </h1>
+                ))}
+
                 <p class="subtitle tbody-5">Designs to make you stand out.</p>
                 <div className='video-banner'>
                   <CategoriesVideoModel onClick={openVideoModal} />
@@ -57,42 +86,50 @@ const Categories = () => {
           </div>
         </div>
 
-        <div className='explore-container'>
-          <div className='bucket-container'>
-            <h2 class="buck-title">Explore Graphics Design</h2>
-            <div className='buck-wrapper'>
-
-              <article className='article-wrapper'>
-                {/* top */}
-                <div className='article-title'>
-                  <div className='title-container'>
-                    <div className='title-top'>
-                      <img className='img-top' src='' alt='' loading='lazy'/>
-                      <h3 className='title-top'>Graphic Design</h3>
-                    </div>
-                  </div>
-                </div>
-                {/* bottom */}
-                <div className='article-content'>
-                  <div className='item-content'>
-                    <div className='item-wrapper'>
-                      <a className='item-name' href=''>
-                        <div className='item-name-inner-link'>
-                          <span>
-                            Test
-                          </span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-            </div>
-          </div>
+        <div className='ex-title'>
+          {wDData.map((item) => (
+            <h2 className="etitle">Explore {item.tenLoaiCongViec}</h2>
+          ))}
         </div>
 
+        <div className='explore-container'>
+          <div className='bucket-container'>
+            {wDData.map((item) => (
+              <div key={item.id} className='buck-wrapper'>
+                {item.dsNhomChiTietLoai.map((nestedItem) => (
+                  <article key={nestedItem.id} className='article-wrapper'>
+                    <div className='article-title'>
+                      <div className='title-container'>
+                        <div className='title-top'>
+                          <img className='img-top' src={nestedItem.hinhAnh} alt='' loading='lazy' style={{width: '326px', height: '194px'}}/>
+                          <h3 className='title-h'>{nestedItem.tenNhom}</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='article-content'>
+                      <div className='item-content'>
+                        {nestedItem.dsChiTietLoai.map((detail) => (
+                          <div className='item-wrapper' key={detail.id}>
+                            <a className='item-name' href={detail.id}>
+                              <div className='item-name-inner-link'>
+                                <span>
+                                  {detail.tenChiTiet}
+                                </span>
+                              </div>
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
+
       <div>
         {showVideoModel && <CategoryVideo onClose={closeVideoModal} />}
       </div>
