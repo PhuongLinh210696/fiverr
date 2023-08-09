@@ -6,11 +6,17 @@ export const getAllWMenu = createAsyncThunk('works/getAllWMenu',
         const res = await wService.getWMenu();
         //return về giá trị muốn store lưu trữ
         return res.data.content
-    })
-
+    });
+    export const getWMenuByWId = createAsyncThunk('works/getWMenuByWId',
+    async (id) => {
+      const response = await wService.getWMenuByWId(id);
+      return response.data.content;
+    });
 const initialState = {
   ws: [],
 };
+
+
 
 const wSlice = createSlice({
   name: 'works',
