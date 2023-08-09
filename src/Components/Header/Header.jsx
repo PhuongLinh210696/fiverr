@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import SignUp from "../SignUp/SignUp";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SignIn from "../SignIn/SignIn";
 import { deleteLocal } from "../../Utils/localStore"
 import * as HinhAnh from '../../Assets/Image'
 import './Header.scss'
 import { Modal } from "antd"
+import { https } from "../../Services/config";
+import { wService } from "../../Services/wService";
 
 const Header = () => {
+
   const { userName } = useSelector((state) => state.user);
-  console.log(userName);
+  console.log(userName)
   const [active, setActive] = useState(false);
   const { pathname } = useLocation;
   const isActice = () => {
@@ -58,6 +61,22 @@ const Header = () => {
   const handleCancelJoin = () => {
     setIsModalOpenJoin(false);
   };
+
+  const [wData, setWData] = useState([]);
+  useEffect(() => {
+    async function fetchWData() {
+      try {
+        const response = await wService.getWMenu();
+        const data = response.data.content;
+        setWData(data);
+        // console.log(data)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    fetchWData();
+  }, []);
   return (
     <nav
       className={
@@ -68,7 +87,7 @@ const Header = () => {
     >
       <div className="h-warp">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-head">
-          <a href="https://flowbite.com/" className="flex items-center h-logo">
+          <a href="/" className="flex items-center h-logo">
             <span
               className={
                 active || pathname == "/"
@@ -297,33 +316,15 @@ const Header = () => {
           <>
             <hr className="border-solid border-1 border-gray-300 " />
             <div className="max-w-screen-xl mx-auto px-4 flex justify-between text-gray-400 h-menu">
-              <NavLink className="link menuLink" to="/">
-                Graphics & Design
+              {wData.map((item) => (
+                <NavLink 
+                key={item.id}
+                className="link menuLink"
+                to={`/Categories/${item.id}`}
+                >
+                {item.tenLoaiCongViec}
               </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Video & Animation
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Writing & Translation
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                AI Services
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Digital Marketing
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Music & Audio
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Programming & Tech
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Business
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Lifestyle
-              </NavLink>
+              ))}
             </div>
           </>
         )}
