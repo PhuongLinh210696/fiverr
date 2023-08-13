@@ -13,7 +13,7 @@ import { wService } from "../../Services/wService";
 const Header = () => {
 
   const { userName } = useSelector((state) => state.user);
-  console.log(userName)
+  // console.log(userName)
   const [active, setActive] = useState(false);
   const { pathname } = useLocation;
   const isActice = () => {
