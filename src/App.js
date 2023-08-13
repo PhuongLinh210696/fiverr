@@ -6,6 +6,8 @@ import AdminTemplate from "./Templates/AdminTemplate"
 import SignInAdmin from "./Pages/SignInAdmin/SignInAdmin";
 import Services from "./Pages/Services/Services";
 import Categories from "./Components/Categories/Categories";
+import ListWork from "./Components/ListWork/ListWork";
+import DetailWork from "./Components/DetailWork/DetailWork";
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<UserTemplate/>}>
           <Route index element={<HomePage/>}/>
           <Route path="Categories/:id" element={<Categories/>}/>
+          <Route path="ListWork/:id" element={<ListWork/>}/>
+          <Route path="DetailWork/:id" element={<DetailWork/>}/>
         </Route>
         <Route path="/admin" element={<AdminTemplate/>}>
             <Route path="typeofworks" element={<TypeOfWorks/>}/>
