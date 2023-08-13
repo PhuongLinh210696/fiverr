@@ -15,7 +15,7 @@ const DetailWork = () => {
                 const res = await wService.getWMenuDById(id);
                 const data = res.data.content;
                 setDetailWork(data);
-                console.log(data);
+                // console.log(data);
             } catch (err) {
                 // console.error('Error fetching data', err);
             }
@@ -29,9 +29,9 @@ const DetailWork = () => {
                 const res2 = await rService.getRByWId(id);
                 const data2 = res2.data.content;
                 setReviewWork(data2);
-                console.log(data2);
+                // console.log(data2);
             } catch (err) {
-                console.error('Error fetching data', err);
+                // console.error('Error fetching data', err);
             }
         }
         fetchReviewWork();
@@ -41,7 +41,6 @@ const DetailWork = () => {
         <>
             <div className='detail-work'>
                 <div className='bg-detail'>
-
                     {detailWork.map((item) => (
                         <div className='detail-page' key={item.id}>
                             <div className='sticky-content'>
@@ -157,6 +156,40 @@ const DetailWork = () => {
                                 <span></span>
                                 <div className='gig-overview'>
                                     <h1 class="text-display-gig">{item.congViec.tenCongViec}</h1>
+                                    <div className='seller-overview'>
+                                        <div className='overview'>
+                                            <div className='overview-wrapper'>
+                                                <div className='overview-avatar'>
+                                                    <figure className='a-fig'>
+                                                        <figcaption className='figc'></figcaption>
+                                                        <img src={item.avatar} className='seller-a' />
+                                                    </figure>
+                                                </div>
+                                                <div className='overview-info'>
+                                                    <div className='info-top'>
+                                                        <a tabindex="0" role="button" aria-label="Scroll to about the seller" class="seller-n" href={`/UserProfileWork/${item.tenNguoiTao}`}>{item.tenNguoiTao}</a>
+                                                    </div>
+                                                    <div className='info-bottom'>
+                                                        <div className='tover-rank'>
+                                                            <div className='s'>
+                                                                <span className="o-star" style={{ width: 15, height: 15 }} aria-hidden="true"><svg width={16} height={15} viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z" /></svg></span>
+                                                            </div>
+                                                            <b className='rate-score'>{item.congViec.saoCongViec}</b>
+                                                            <span className='count'>
+                                                                (
+                                                                <span className='count-n'>{item.congViec.danhGia}</span>
+                                                                )
+                                                            </span>
+                                                        </div>
+                                                        <div className="di">
+                                                            <div className="div" />
+                                                        </div>
+                                                        <div class="ord">11 Orders in Queue</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <span></span>
                                 <section className='gig-galery'>
@@ -223,7 +256,7 @@ const DetailWork = () => {
                                                 <div className='seller-info'>
                                                     <div className='seller-name'>
                                                         <div className='name-item'>
-                                                            <div tabindex="0" role="button" aria-label="Scroll to about the seller" class="name">{item.tenNguoiTao}</div>
+                                                            <a tabindex="0" role="button" aria-label="Scroll to about the seller" class="name" href={`/UserProfileWork/${item.tenNguoiTao}`}>{item.tenNguoiTao}</a>
                                                         </div>
                                                         <div className='space'></div>
                                                     </div>
