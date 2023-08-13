@@ -28,7 +28,7 @@ const Categories = () => {
 
   const [wDData, setWDData] = useState([]);
   useEffect(() => {
-    console.log(id)
+    // console.log(id)
     async function fetchWDData() {
       try {
         const response = await wService.getWMenuByWId(id);
@@ -36,7 +36,7 @@ const Categories = () => {
         setWDData(data);
         // console.log(data)
       } catch (error) {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
       }
     }
 
@@ -69,7 +69,11 @@ const Categories = () => {
           <div className='wrapper'>
             <div className='wrapper-content'>
               <div class="most-popular-header">
-                <h2 class="text-display">Most popular in Graphics Design</h2>
+              {wDData.map((item) => (
+                  <h2 class="text-display" key={item.id}>
+                    Most popular in {item.tenLoaiCongViec}
+                  </h2>
+                ))}
               </div>
               <div className='button-wrapper'>
               </div>
@@ -110,7 +114,7 @@ const Categories = () => {
                       <div className='item-content'>
                         {nestedItem.dsChiTietLoai.map((detail) => (
                           <div className='item-wrapper' key={detail.id}>
-                            <a className='item-name' href={detail.id}>
+                            <a className='item-name' href={`/ListWork/${detail.id}`}>
                               <div className='item-name-inner-link'>
                                 <span>
                                   {detail.tenChiTiet}
