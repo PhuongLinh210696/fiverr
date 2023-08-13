@@ -187,7 +187,7 @@ const ListWork = () => {
                                                             </figure>
                                                         </div>
                                                         <span className='avatar-name'>
-                                                            <a href='#' target='_blank' className='a-name'>
+                                                            <a href={`/UserProfileWork/${item.tenNguoiTao}`} target='_blank' className='a-name'>
                                                                 <span>{item.tenNguoiTao}</span>
                                                             </a>
                                                         </span>
