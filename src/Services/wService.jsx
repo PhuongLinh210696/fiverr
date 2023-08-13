@@ -31,10 +31,10 @@ export const wService = {
   getWMenuByWDetail: (id) => {
     return https.get(`api/cong-viec/lay-cong-viec-theo-chi-tiet-loai/${id}`);
   },
-  getWMenuDById: (id) => {
-    return https.get(`api/cong-viec/lay-cong-viec-chi-tiet/${id}`);
+  getWMenuDById: (maCV) => {
+    return https.get(`api/cong-viec/lay-cong-viec-chi-tiet/${maCV}`);
   },
-  getWMenuLByName: (id) => {
-    return https.get(`api/cong-viec/lay-danh-sach-cong-viec-theo-ten/${id}`);
+  getWMenuLByName: (name) => {
+    return https.get(`api/cong-viec/lay-danh-sach-cong-viec-theo-ten/${name}`);
   },
 };
