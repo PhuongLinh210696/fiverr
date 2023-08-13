@@ -8,6 +8,7 @@ import Services from "./Pages/Services/Services";
 import Categories from "./Components/Categories/Categories";
 import ListWork from "./Components/ListWork/ListWork";
 import DetailWork from "./Components/DetailWork/DetailWork";
+import UserProfileWork from "./Components/UserProfileWork/UserProfileWork";
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
           <Route path="Categories/:id" element={<Categories/>}/>
           <Route path="ListWork/:id" element={<ListWork/>}/>
           <Route path="DetailWork/:id" element={<DetailWork/>}/>
+          <Route path="UserProfileWork" element={<UserProfileWork/>}/>
         </Route>
         <Route path="/admin" element={<AdminTemplate/>}>
             <Route path="typeofworks" element={<TypeOfWorks/>}/>
