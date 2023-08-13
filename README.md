@@ -21,3 +21,5 @@ Các thư viện cần cại đặt
 - yup: npm i yup -f
 - sass: npm i sass sass-loader
 
+Cài đặt thêm:
+- react-player
