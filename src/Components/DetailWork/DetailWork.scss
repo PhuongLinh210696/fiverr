@@ -541,6 +541,192 @@
                             font-size: 28px;
                         }
                     }
+
+                    .seller-overview {
+                        padding-bottom: 8px;
+
+                        @media screen and (min-width: 600px) {
+                            padding-bottom: 0;
+                        }
+
+                        .overview {
+                            box-sizing: border-box;
+                            display: none;
+
+                            @media screen and (min-width: 900px) {
+                                display: block;
+                            }
+
+                            .overview-wrapper {
+                                box-sizing: border-box;
+                                gap: 12px;
+                                -webkit-box-orient: vertical;
+                                -webkit-box-direction: normal;
+                                flex-direction: row;
+                                align-items: center;
+                                display: flex;
+                                width: 100%;
+
+                                .overview-avatar {
+                                    box-sizing: border-box;
+                                    display: inline-flex;
+                                    position: relative;
+                                    border-radius: 50%;
+
+                                    .a-fig {
+                                        display: inline-flex;
+                                        position: relative;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        -webkit-align-items: center;
+                                        align-items: center;
+                                        border-radius: 50%;
+                                        height: 1em;
+                                        -webkit-justify-content: center;
+                                        justify-content: center;
+                                        margin: 0;
+                                        min-width: 1em;
+                                        overflow: hidden;
+                                        font-size: 64px;
+                                        background-color: #B47C2E;
+
+                                        .figc {
+                                            border: 0;
+                                            color: #fff;
+                                            font-size: 49%;
+                                            font-weight: 600;
+                                            text-transform: uppercase;
+                                        }
+
+                                        .seller-a {
+                                            background-color: #b5b6ba;
+                                            height: 100%;
+                                            -o-object-fit: cover;
+                                            object-fit: cover;
+                                            position: absolute;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+
+                                .overview-info {
+                                    box-sizing: border-box;
+                                    gap: 0;
+                                    flex-direction: column;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-box-direction: normal;
+                                    display: flex;
+                                    width: 100%;
+
+                                    .info-top {
+                                        box-sizing: border-box;
+                                        padding-bottom: 8px;
+                                        gap: 12px;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        display: flex;
+                                        width: 100%;
+
+                                        .seller-n {
+                                            font-size: 18px;
+                                            line-height: 26px;
+                                            color: #404145;
+                                            cursor: pointer;
+                                            font-weight: 700;
+                                            margin-right: 8px;
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                text-decoration: underline;
+                                            }
+                                        }
+
+
+                                    }
+
+                                    .info-bottom {
+                                        box-sizing: border-box;
+                                        gap: 12px;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        flex-direction: row;
+                                        align-items: baseline;
+                                        display: flex;
+                                        width: 100%;
+
+                                        .tover-rank {
+                                            margin-right: 0 !important;
+                                            display: flex;
+                                            cursor: pointer;
+                                            line-height: 24px;
+                                            font-size: 16px;
+
+                                            .s {
+                                                display: inline-flex;
+                                                padding-bottom: 4px;
+
+                                                .o-star {
+                                                    background: none;
+                                                    border: none;
+                                                    display: inline-block;
+                                                    margin: 0;
+                                                    padding: 0;
+                                                    fill: #404145;
+
+                                                    svg {
+                                                        float: left;
+                                                        height: 100%;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+
+                                            .rate-score {
+                                                padding-left: 4px;
+                                                color: #404145;
+                                            }
+
+                                            .count {
+                                                color: #74767e;
+                                                padding-left: 4px;
+
+                                                .count-n {
+                                                    text-decoration-line: underline;
+                                                }
+                                            }
+                                        }
+
+                                        .di {
+                                            box-sizing: border-box;
+                                            align-self: center;
+                                            height: 1em;
+
+                                            .div {
+                                                box-sizing: border-box;
+                                                border-style: solid;
+                                                border-left-width: 1px;
+                                                width: 0;
+                                                height: 100%;
+                                                border-color: #e4e5e7;
+                                            }
+                                        }
+
+                                        .ord {
+                                            color: #74767e;
+                                            margin-right: 8px;
+                                            align-self: baseline;
+                                            font-size: 14px;
+                                            display: flex;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
 
                 .gig-galery {
