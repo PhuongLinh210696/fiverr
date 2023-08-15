@@ -292,7 +292,7 @@
                                 justify-content: space-between;
                                 margin-bottom: 0;
 
-                                .user-stats-icon1{
+                                .user-stats-icon1 {
                                     display: inline-block;
                                     background: none;
                                     border: none;
@@ -306,7 +306,209 @@
 
                 }
             }
-            .user-segmentation{}
+
+            .user-segmentation {
+                display: block;
+
+                .mp-seller-profile {
+                    .form-thin {
+                        article {
+                            background-color: #fff;
+                            border: 1px solid #ddd;
+                            padding: 30px;
+
+                            .f-overview {
+                                border-bottom: 1px solid #ddd;
+                                padding-bottom: 10px;
+                                margin-bottom: 30px;
+
+                                .description {
+                                    font-size: 14px;
+                                    position: relative;
+                                    min-height: 0;
+                                    padding: 0;
+                                    padding-top: 0;
+                                    border-bottom: 0;
+                                    padding-bottom: 20px;
+
+                                    aside {
+                                        display: block;
+                                        width: auto;
+                                        vertical-align: top;
+
+                                        h3 {
+                                            font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+                                            color: #0e0e0f;
+                                            font-size: 16px;
+                                            font-weight: 700;
+                                            padding-bottom: 7px;
+                                            line-height: 120%;
+
+                                            @media screen and (max-width: 600px) {
+                                                font-size: 28px;
+                                            }
+                                        }
+
+                                        .add {
+                                            color: #00698c;
+                                            font-size: 14px;
+                                            font-weight: 400;
+                                            float: right;
+                                            display: inline-block;
+                                        }
+                                    }
+
+                                    section {
+                                        width: 100%;
+                                        padding-top: 10px;
+                                        display: inline-block;
+
+                                        p {
+                                            line-height: 20px;
+                                        }
+
+                                        .counter {
+                                            float: right;
+                                            padding: 5px 0 0;
+                                            display: none !important;
+                                            visibility: hidden !important;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .f-lang {
+                                border-bottom: 1px solid #ddd;
+                                padding-bottom: 10px;
+                                margin-bottom: 30px;
+
+                                .langs {
+                                    position: relative;
+                                    min-height: 0;
+                                    padding: 0;
+                                    padding-top: 0;
+                                    border-bottom: 0;
+                                    padding-bottom: 0;
+
+                                    aside {
+                                        vertical-align: top;
+                                        display: block;
+                                        width: auto;
+
+                                        h3 {
+                                            position: relative;
+                                            line-height: 120%;
+                                            color: #0e0e0f;
+                                            font-size: 16px;
+                                            font-weight: 700;
+                                            padding-bottom: 7px;
+
+                                            .add {
+                                                color: #00698c;
+                                                font-size: 14px;
+                                                font-weight: 400;
+                                                float: right;
+                                                display: inline-block;
+                                            }
+                                        }
+
+                                        .question {
+                                            line-height: 20px;
+                                            font-size: 14px;
+                                            color: #555;
+                                            padding-top: 5px;
+                                        }
+                                    }
+
+                                    section {
+                                        display: inline-block;
+                                        width: 100%;
+
+                                        .items-list {
+                                            padding-bottom: 10px;
+                                            padding-top: 10px;
+
+                                            li {
+                                                margin-bottom: 10px;
+
+                                                .title {
+                                                    font-size: 14px;
+                                                    line-height: 18px;
+                                                    margin-bottom: 5px;
+                                                    font-weight: 400;
+                                                    color: #555;
+                                                }
+
+                                                .sub-title {
+                                                    color: #b2b2b2;
+                                                    font-size: 14px;
+                                                    font-weight: 400;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .f-social-account {
+                                border-bottom: 0;
+                                margin-bottom: 0;
+                                padding-bottom: 0;
+
+                                .social-acc {
+                                    position: relative;
+                                    min-height: 0;
+                                    padding: 0;
+                                    padding-top: 0;
+                                    border-bottom: 0;
+                                    padding-bottom: 13px;
+
+                                    aside {
+                                        vertical-align: top;
+                                        display: block;
+                                        width: auto;
+
+                                        .hint-social {
+                                            line-height: 120%;
+                                            color: #0e0e0f;
+                                            font-size: 16px;
+                                            font-weight: 700;
+                                            padding-bottom: 7px;
+                                        }
+                                    }
+                                    section{
+                                        display: inline-block;
+                                        width: 100%;
+                                        .connect{
+                                            transition: all .3s;
+                                            border-radius: 4px;
+                                            cursor: pointer;
+                                            width: 137px;
+                                            font-size: 14px;
+                                            display: block;
+                                            border: 0;
+                                            margin: 0;
+                                            padding: 7px 0 7px 26px;
+                                            color: #00698c;
+                                            i{
+                                                font-size: 14px;
+                                                margin-left: -25px;
+                                                font-family: FontAwesome;
+                                                position: absolute;
+                                                z-index: 1;
+                                            }
+                                            span{
+                                                color: #00698c;
+                                            
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .gigs-col {}

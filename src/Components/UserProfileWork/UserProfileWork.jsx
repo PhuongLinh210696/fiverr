@@ -72,7 +72,73 @@ const UserProfileWork = () => {
               </div>
             </div>
             <section className='user-segmentation'>
-
+              <div className='mp-seller-profile'>
+                <section className='form-thin'>
+                  <article>
+                    <form className='f-overview'>
+                      <div className='description'>
+                        <aside>
+                          <h3 className='h'>
+                            Description
+                            <a className='add'>Edit</a>
+                          </h3>
+                        </aside>
+                        <section>
+                          <p></p>
+                          <span class="counter"></span>
+                        </section>
+                      </div>
+                    </form>
+                    <form className='f-lang'>
+                      <div className='langs'>
+                        <aside>
+                          <h3 className="hint">Languages
+                            <a href="#" className="add">Add New</a>
+                          </h3>
+                        </aside>
+                        <section>
+                          <ul className="items-list">
+                            <li>
+                              <span className="title">Vietnamese</span> - <span className="sub-title">Fluent</span>
+                            </li>
+                          </ul>
+                        </section>
+                      </div>
+                    </form>
+                    <form className='f-social-account'>
+                      <div className='social-acc'>
+                        <aside>
+                          <h3 className="hint-social">Linked Accounts</h3>
+                        </aside>
+                        <section>
+                          <ul>
+                            <li className='connect'>
+                              <i>+</i>
+                              <span>Facebook</span>
+                            </li>
+                            <li className='connect'>
+                              <i>+</i>
+                              <span>Google</span>
+                            </li>
+                            <li className='connect'>
+                              <i>+</i>
+                              <span>Github</span>
+                            </li>
+                            <li className='connect'>
+                              <i>+</i>
+                              <span>Stack Overflow</span>
+                            </li>
+                            <li className='connect'>
+                              <i>+</i>
+                              <span>Facebook</span>
+                            </li>
+                          </ul>
+                        </section>
+                      </div>
+                    </form>
+                  </article>
+                </section>
+              </div>
             </section>
           </section>
           <section className='gigs-col'></section>
