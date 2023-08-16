@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './UserProfileWork.scss'
+import { userService } from '../../Services/userService';
+import { useParams } from 'react-router-dom';
 
 const UserProfileWork = () => {
+  const { id } = useParams();
+  const [userProfile, setUserProfile] = useState([]);
+
+  useEffect(() => {
+    async function fetchUserProfile() {
+      try {
+        const res = await userService.getUserById(id);
+        const data = res.data.content;
+        setUserProfile(data);
+        console.log(data);
+      } catch (err) {
+        // console.error('Error fetching data', err);
+      }
+    }
+    fetchUserProfile();
+  }, [id]);
   return (
     <>
-      <div className='user-data'>
+    {userProfile &&
+      <div className='user-data' key={userProfile.id}>
         <div className='row-flex'>
           <section className='info-col'>
             <div className='info-component'>
@@ -38,7 +57,7 @@ const UserProfileWork = () => {
                         <div className='flex'>
                           <div className='display-name-tooltip'>
                             <span className='display-name'>
-                              <button className='btn-name'>abc</button>
+                              <button className='btn-name'></button>
                             </span>
                           </div>
                         </div>
@@ -66,6 +85,18 @@ const UserProfileWork = () => {
                         <span className="user-stats-icon1" aria-hidden="true" style={{ width: 13, height: 13, fill: 'rgb(98, 100, 106)' }}><svg width={14} height={16} viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg"><path d="M7 8C9.20938 8 11 6.20937 11 4C11 1.79063 9.20938 0 7 0C4.79063 0 3 1.79063 3 4C3 6.20937 4.79063 8 7 8ZM9.8 9H9.27812C8.58437 9.31875 7.8125 9.5 7 9.5C6.1875 9.5 5.41875 9.31875 4.72188 9H4.2C1.88125 9 0 10.8813 0 13.2V14.5C0 15.3281 0.671875 16 1.5 16H12.5C13.3281 16 14 15.3281 14 14.5V13.2C14 10.8813 12.1187 9 9.8 9Z" /></svg></span>Member since
                       </span>
                       <b>Aug 2023</b>
+                    </li>
+                    <li className='member-since'>
+                      <span>
+                        <span className="user-stats-icon1" aria-hidden="true" style={{ width: 13, height: 13, fill: 'rgb(98, 100, 106)' }}><svg width={14} height={16} viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" /></svg></span>Phone
+                      </span>
+                      <b>{userProfile.phone}</b>
+                    </li>
+                    <li className='member-since'>
+                      <span>
+                        <span className="user-stats-icon1" aria-hidden="true" style={{ width: 13, height: 13, fill: 'rgb(98, 100, 106)' }}><svg width={14} height={16} viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg"><path d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm8-6h-8V6h8v6z" /></svg></span>Mail
+                      </span>
+                      <b>{userProfile.email}</b>
                     </li>
                   </ul>
                 </div>
@@ -144,6 +175,7 @@ const UserProfileWork = () => {
           <section className='gigs-col'></section>
         </div>
       </div>
+    }
     </>
   )
 }

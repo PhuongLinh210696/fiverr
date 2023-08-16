@@ -18,7 +18,7 @@ function App() {
           <Route path="Categories/:id" element={<Categories/>}/>
           <Route path="ListWork/:id" element={<ListWork/>}/>
           <Route path="DetailWork/:id" element={<DetailWork/>}/>
-          <Route path="UserProfileWork" element={<UserProfileWork/>}/>
+          <Route path="UserProfileWork/:id" element={<UserProfileWork/>}/>
         </Route>
         <Route path="/admin" element={<AdminTemplate/>}>
             <Route path="typeofworks" element={<TypeOfWorks/>}/>
