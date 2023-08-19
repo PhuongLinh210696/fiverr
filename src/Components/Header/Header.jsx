@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import SignUp from "../SignUp/SignUp";
-import { useSelector,useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SignIn from "../SignIn/SignIn";
 import { deleteLocal } from "../../Utils/localStore"
 import * as HinhAnh from '../../Assets/Image'
 import './Header.scss'
 import { Modal } from "antd"
-import { getAllUsers } from "../../Redux/slices/userSlice";
+import { https } from "../../Services/config";
+import { wService } from "../../Services/wService";
+import { Button, Dropdown, Space } from 'antd';
 
 const Header = () => {
-  const dispatch = useDispatch();
-    const { users } = useSelector((state) => state.users)
-    useEffect(() => {
-      console.log(dispatch(getAllUsers()))
-        
-    }, []);
 
   const { userName } = useSelector((state) => state.user);
-  console.log(userName);
+  console.log(userName)
   const [active, setActive] = useState(false);
   const { pathname } = useLocation;
   const isActice = () => {
@@ -66,6 +62,74 @@ const Header = () => {
   const handleCancelJoin = () => {
     setIsModalOpenJoin(false);
   };
+
+  const [wData, setWData] = useState([]);
+  useEffect(() => {
+    async function fetchWData() {
+      try {
+        const response = await wService.getWMenu();
+        const data = response.data.content;
+        setWData(data);
+        // console.log(data)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    fetchWData();
+  }, []);
+
+  //Dropdown Ant
+  const items = [
+    {
+      key: '1',
+      label:userName && userName.user ? (
+        <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+          {userName.user.name}
+        </a>
+      ): null,
+    },
+    {
+      key: '2',
+      label:userName && userName.user ? (
+        <a target="_blank" rel="noopener noreferrer" href={`/UserProfileWork/${userName.user.id}`}>
+          User Profile
+        </a>
+      ):null,
+    },
+    {
+      key: '3',
+      label: userName && userName.user ? (
+        <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+          Add New Gig
+        </a>
+      ) : null,
+    },
+    {
+      key: '4',
+      label:userName && userName.user ?(
+        <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+          Orders
+        </a>
+      ):null,
+    },
+    {
+      key: '5',
+      label:userName && userName.user ?(
+        <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+          Messages
+        </a>
+      ):null,
+    },
+    {
+      key: '6',
+      label:userName && userName.user ?(
+        <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com" onClick={handleClick}>
+          Sign Out
+        </a>
+      ):null,
+    },
+  ];
   return (
     <nav
       className={
@@ -76,7 +140,7 @@ const Header = () => {
     >
       <div className="h-warp">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-head">
-          <a href="https://flowbite.com/" className="flex items-center h-logo">
+          <a href="/" className="flex items-center h-logo">
             <span
               className={
                 active || pathname == "/"
@@ -145,7 +209,7 @@ const Header = () => {
                   English
                 </a>
               </li>
-              {!currentUser?.isSeler && (
+              {/* {!currentUser?.isSeler && (
                 <li>
                   <NavLink
                     href="#"
@@ -158,7 +222,7 @@ const Header = () => {
                     Become a Seller
                   </NavLink>
                 </li>
-              )}
+              )} */}
               <li>
                 <button
                   data-modal-target="authentication-modal"
@@ -193,7 +257,13 @@ const Header = () => {
                 )}
                 {userName && (
                   <div>
-                    <button
+                    <Dropdown
+                      menu={{
+                        items,
+                      }}
+                      placement="bottomLeft"
+                    >
+                      <button
                       type="button"
                       className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0"
                       id="user-menu-button"
@@ -208,66 +278,8 @@ const Header = () => {
                         alt="user photo"
                       />
                     </button>
-                    {/* Dropdown menu */}
-                    <div
-                      className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
-                      id="user-dropdown"
-                    >
-                      <div className="px-4 py-3">
-                        <span className="block text-sm text-gray-900 dark:text-white">
-                          {/* {currentUser.userName} */}
-                          {userName.user.name}
-                        </span>
-                      </div>
-                      <ul className="py-2" aria-labelledby="user-menu-button">
-                        {currentUser?.isSeler && (
-                          <>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                              >
-                                Gigs
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                              >
-                                Add New Gig
-                              </a>
-                            </li>
-                          </>
-                        )}
-
-                        <li>
-                          <a
-                            href="#"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                          >
-                            Orders
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                          >
-                            Messages
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                            onClick={handleClick}
-                          >
-                            Sign out
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                    </Dropdown>
+                    
                   </div>
                 )}
                 <button
@@ -305,33 +317,15 @@ const Header = () => {
           <>
             <hr className="border-solid border-1 border-gray-300 " />
             <div className="max-w-screen-xl mx-auto px-4 flex justify-between text-gray-400 h-menu">
-              <NavLink className="link menuLink" to="/">
-                Graphics & Design
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Video & Animation
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Writing & Translation
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                AI Services
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Digital Marketing
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Music & Audio
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Programming & Tech
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Business
-              </NavLink>
-              <NavLink className="link menuLink" to="/">
-                Lifestyle
-              </NavLink>
+              {wData.map((item) => (
+                <NavLink
+                  key={item.id}
+                  className="link menuLink"
+                  to={`/Categories/${item.id}`}
+                >
+                  {item.tenLoaiCongViec}
+                </NavLink>
+              ))}
             </div>
           </>
         )}

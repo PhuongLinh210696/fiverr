@@ -1,0 +1,2293 @@
+.detail-work {
+    .bg-detail {
+        background-color: #fff;
+
+        .detail-page {
+            background-color: #fff;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            max-width: 1304px;
+            padding: 32px 24px 0;
+            position: relative;
+
+            @media screen and (min-width: 600px) {
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+
+            @media screen and (min-width: 900px) {
+                align-items: flex-start;
+                flex-direction: row;
+            }
+
+            .sticky-content {
+
+                @media screen and (min-width: 900px) {
+                    padding-bottom: 32px;
+                    width: 35.42%;
+                    order: 20;
+                }
+
+                @media screen and (min-width: 1160px) {
+                    width: 33.6%;
+                }
+
+                .inner-wrapper {
+                    margin-bottom: 32px;
+                    padding-bottom: 32px;
+                    z-index: 5;
+                    position: relative;
+                    transform: translate3d(0px, 0px, 0px);
+
+                    @media screen and (min-width: 900px) {
+                        margin-bottom: 16px;
+                    }
+
+                    .side-content {
+                        display: block;
+                        border: 0;
+
+                        .like-share-container {
+                            box-sizing: border-box;
+                            padding-bottom: 12px;
+                            display: none;
+
+                            @media screen and (min-width: 900px) {
+                                display: block;
+                                margin-bottom: 16px;
+                            }
+
+                            .like-share {
+                                box-sizing: border-box;
+                                gap: 12px;
+                                flex-direction: row;
+                                justify-content: flex-end;
+                                display: flex;
+                                width: 100%;
+
+                                .like-wrapper {
+                                    align-items: center;
+                                    display: flex;
+
+                                    .heart-likes {
+                                        column-gap: 8px;
+                                        display: flex;
+
+                                        .like-btn {
+                                            display: inline-flex;
+
+                                            .likes {
+                                                display: inline-flex;
+                                                box-sizing: border-box;
+
+                                                .btn {
+                                                    background-color: transparent;
+                                                    border: 0;
+                                                    display: flex;
+
+                                                    .heart {
+                                                        background: none;
+                                                        border: none;
+                                                        display: inline-block;
+                                                        margin: 0;
+                                                        padding: 0;
+                                                        fill: #b5b6ba;
+                                                        position: relative;
+
+                                                        svg {
+                                                            float: left;
+                                                            height: 100%;
+                                                            width: 100%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .number-likes {
+                                        border: 1px solid #dadbdd;
+                                        border-radius: 3px;
+                                        -webkit-box-sizing: border-box;
+                                        box-sizing: border-box;
+                                        color: #222325;
+                                        font-size: 14px;
+                                        margin-left: 13px;
+                                        padding: 2px 10px;
+                                        position: relative;
+                                    }
+                                }
+
+                                .share {
+                                    max-width: 100%;
+                                    width: fit-content;
+
+                                    .share-btn {
+                                        background: none;
+                                        align-items: center;
+                                        border: 1px solid transparent;
+                                        border-radius: 8px;
+                                        box-sizing: border-box;
+                                        cursor: pointer;
+                                        font-size: 16px;
+                                        font-weight: 600;
+                                        gap: 8px;
+                                        justify-content: center;
+                                        line-height: 24px;
+                                        padding: 8px 15px;
+                                        position: relative;
+                                        text-decoration: none;
+                                        transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                                        user-select: none;
+                                        display: inline-flex;
+                                        border-color: #e4e5e7;
+                                        color: #222325;
+                                    }
+                                }
+                            }
+
+
+
+
+                        }
+
+                        .package-tabs {
+                            margin: 0 -24px;
+
+                            @media screen and (min-width: 900px) {
+                                margin: 0 -32px;
+                            }
+
+                            @media screen and (min-width: 900px) {
+                                border: 1px solid #dadbdd;
+                                margin: 0;
+                                margin-bottom: 16px;
+                            }
+
+                            input {
+                                display: none;
+
+                                [id]:checked .nav-container label[for] .lbl {
+                                    border-bottom: 3px solid #222325;
+                                    color: #222325;
+                                }
+                            }
+
+                            .nav-container {
+                                display: flex;
+
+                                .lbl {
+                                    -webkit-box-flex: 1;
+                                    background-color: #fafafa;
+                                    border: 1px solid #dadbdd;
+                                    border-left: none;
+                                    color: #74767e;
+                                    cursor: pointer;
+                                    -ms-flex: 1 1;
+                                    flex: 1 1;
+                                    font-weight: 700;
+                                    padding: 16px;
+                                    text-align: center;
+
+                                    :nth-child(1) {
+                                        border-bottom: 3px solid #222325;
+                                        color: #222325;
+                                        background-color: #fff;
+                                    }
+
+                                    @media screen and (min-width: 900px) {
+                                        border-top: none;
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+
+                            .nav-content {
+                                padding-top: 32px;
+
+                                .content-detail {
+                                    padding-left: 24px;
+                                    padding-right: 24px;
+                                    position: relative;
+
+                                    .header-deatil {
+                                        line-height: 21px;
+                                        display: block;
+                                        padding-bottom: 10px;
+
+                                        h3 {
+                                            color: #404145;
+                                            font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                                            font-weight: 700;
+                                            justify-content: space-between;
+                                            display: flex;
+                                            font-size: 24px;
+                                            line-height: 130%;
+
+                                            @media screen and (min-width: 600px) {
+                                                font-size: 28px;
+                                            }
+
+                                            .price-wrapper {
+                                                .price {
+                                                    line-height: 24px;
+                                                    white-space: nowrap;
+                                                    font-size: 24px;
+                                                    font-weight: 700;
+                                                }
+
+                                                .p-item {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    font-size: 16px;
+                                                    line-height: 24px;
+                                                    font-weight: 400;
+                                                    margin-top: 2px;
+
+                                                    .subs {
+                                                        color: #026a5d;
+                                                        font-weight: 600 !important;
+                                                        margin-right: 8px;
+                                                        font-size: 16px !important;
+                                                        line-height: 24px;
+                                                        cursor: pointer;
+                                                    }
+
+                                                    .p-icon {
+                                                        display: inline-flex;
+
+                                                        .subs-play {
+                                                            font-size: 16px !important;
+                                                            display: inline-flex;
+                                                            box-sizing: border-box;
+                                                            font-weight: 400;
+                                                            line-height: 24px;
+
+                                                            .plays {
+                                                                fill: #74767e;
+                                                                background: none;
+                                                                border: none;
+                                                                display: inline-block;
+                                                                margin: 0;
+                                                                padding: 0;
+                                                                font-weight: 400;
+                                                                line-height: 24px;
+                                                                font-size: 16px !important;
+
+                                                                svg {
+                                                                    float: left;
+                                                                    height: 100%;
+                                                                    width: 100%;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .d-content {
+                                            margin-bottom: 10px;
+                                            margin-top: 24px !important;
+                                            font-size: 14px;
+                                            line-height: 140%;
+                                            word-break: break-word;
+                                            min-height: 63px;
+                                        }
+                                    }
+
+                                    .additional-info {
+                                        display: flex;
+                                        margin-bottom: 8px;
+
+                                        .delivery-wrapper {
+                                            align-items: center;
+                                            display: inline-flex;
+
+                                            .delivery-icon {
+                                                background: none;
+                                                border: none;
+                                                display: inline-block;
+                                                margin: 0;
+                                                padding: 0;
+                                                fill: #62646a;
+                                            }
+                                        }
+
+                                        .revision-wrapper {
+                                            display: inline-flex;
+                                            align-items: center;
+                                            margin-left: 16px;
+
+                                            .revisions-icon {
+                                                background: none;
+                                                border: none;
+                                                display: inline-block;
+                                                margin: 0;
+                                                padding: 0;
+                                                fill: #62646a;
+                                            }
+                                        }
+                                    }
+
+                                    .features {
+                                        margin-bottom: 20px;
+
+                                        .f-item {
+                                            display: flex;
+                                            align-items: center;
+                                            color: #95979d;
+
+                                            .f-icon {
+                                                background: none;
+                                                border: none;
+                                                display: inline-block;
+                                                margin: 0;
+                                                padding: 0;
+                                                padding-right: 12px !important;
+                                                fill: #222325 !important;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .payment {
+                                    padding-left: 24px;
+                                    padding-right: 24px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    color: #404145;
+
+                                    @media screen and (min-width: 600px) {
+                                        padding-bottom: 20px;
+                                    }
+
+                                    .pay {
+                                        color: #fff;
+                                        background-color: #000;
+                                        transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                                        box-sizing: border-box;
+                                        cursor: pointer;
+                                        display: inline-block;
+                                        font-size: 16px;
+                                        font-weight: 600;
+                                        line-height: 100%;
+                                        padding: 12px 24px;
+                                        position: relative;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        border: 1px solid transparent;
+                                        border-radius: 4px;
+
+                                        .rf {
+                                            float: right;
+                                            background: none;
+                                            border: none;
+                                            display: inline-block;
+                                            margin: 0;
+                                            padding: 0;
+
+                                            svg {
+                                                float: left;
+                                                height: 100%;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    .compare {
+                                        font-size: 14px;
+                                        line-height: 21px;
+                                        background: transparent;
+                                        border: 0;
+                                        padding-top: 12px;
+                                        color: #222325;
+
+                                        @media screen and (min-width: 900px) {
+                                            display: flex;
+                                            justify-content: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .contact-seller {
+                            background-color: #fafafa;
+                            padding: 24px;
+
+                            @media screen and (min-width: 900px) {
+                                margin-bottom: 16px;
+                            }
+
+                            .contact-seller-wrapper {
+                                text-align: center;
+
+                                .btn-contact-seller {
+                                    color: #62646a;
+                                    border: 1px solid transparent;
+                                    border-radius: 4px;
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    cursor: pointer;
+                                    display: inline-block;
+                                    font-size: 16px;
+                                    font-weight: 600;
+                                    line-height: 100%;
+                                    padding: 12px 24px;
+                                    position: relative;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                                    background: none;
+                                    border-color: #62646a;
+
+                                    &:hover {
+                                        border-color: transparent;
+                                        color: #fff;
+                                        background: #74767e;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                display: flex;
+                flex-direction: column;
+                display: contents;
+
+                @media screen and (min-width: 900px) {
+                    display: block;
+                    margin-right: 5.5%;
+                    -webkit-order: 10;
+                    order: 10;
+                    width: 59.08%;
+                }
+
+                @media screen and (min-width: 1160px) {
+                    margin-right: 9.15%;
+                    width: 57.42%;
+                }
+
+                .main-breadcrumb {
+                    box-sizing: border-box;
+                    gap: 12px;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    flex-direction: row;
+                    display: flex;
+                    width: 100%;
+                    margin-bottom: 32px !important;
+                    padding-top: 12px;
+
+                    @media screen and (min-width: 900px) {
+                        margin-bottom: 64px;
+                    }
+
+                    .m-breadcrumb {
+                        box-sizing: border-box;
+                        gap: 8px;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        display: flex;
+                        width: 100%;
+
+                        .home-b {
+                            line-height: 21px;
+                            font-size: 14px;
+                            color: #222325;
+                            text-decoration: none;
+                        }
+
+                        .b-dash {
+                            font-weight: 400;
+                            line-height: 21px;
+                            font-size: 14px;
+                            color: #c5c6c9;
+                        }
+                    }
+                }
+
+                .gig-overview {
+                    background: #fff;
+                    margin-bottom: 16px;
+
+                    @media screen and (min-width: 900px) {
+                        margin-bottom: 64px;
+                    }
+
+                    @media screen and (min-width: 1160px) {
+                        margin-bottom: 24px;
+                    }
+
+                    .text-display-gig {
+                        font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                        font-weight: 700;
+                        line-height: 130%;
+                        overflow-wrap: break-word;
+                        padding-bottom: 16px;
+                        color: #222325;
+
+                        @media screen and (min-width: 600px) {
+                            font-size: 28px;
+                        }
+                    }
+
+                    .seller-overview {
+                        padding-bottom: 8px;
+
+                        @media screen and (min-width: 600px) {
+                            padding-bottom: 0;
+                        }
+
+                        .overview {
+                            box-sizing: border-box;
+                            display: none;
+
+                            @media screen and (min-width: 900px) {
+                                display: block;
+                            }
+
+                            .overview-wrapper {
+                                box-sizing: border-box;
+                                gap: 12px;
+                                -webkit-box-orient: vertical;
+                                -webkit-box-direction: normal;
+                                flex-direction: row;
+                                align-items: center;
+                                display: flex;
+                                width: 100%;
+
+                                .overview-avatar {
+                                    box-sizing: border-box;
+                                    display: inline-flex;
+                                    position: relative;
+                                    border-radius: 50%;
+
+                                    .a-fig {
+                                        display: inline-flex;
+                                        position: relative;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        -webkit-align-items: center;
+                                        align-items: center;
+                                        border-radius: 50%;
+                                        height: 1em;
+                                        -webkit-justify-content: center;
+                                        justify-content: center;
+                                        margin: 0;
+                                        min-width: 1em;
+                                        overflow: hidden;
+                                        font-size: 64px;
+                                        background-color: #B47C2E;
+
+                                        .figc {
+                                            border: 0;
+                                            color: #fff;
+                                            font-size: 49%;
+                                            font-weight: 600;
+                                            text-transform: uppercase;
+                                        }
+
+                                        .seller-a {
+                                            background-color: #b5b6ba;
+                                            height: 100%;
+                                            -o-object-fit: cover;
+                                            object-fit: cover;
+                                            position: absolute;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+
+                                .overview-info {
+                                    box-sizing: border-box;
+                                    gap: 0;
+                                    flex-direction: column;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-box-direction: normal;
+                                    display: flex;
+                                    width: 100%;
+
+                                    .info-top {
+                                        box-sizing: border-box;
+                                        padding-bottom: 8px;
+                                        gap: 12px;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        display: flex;
+                                        width: 100%;
+
+                                        .seller-n {
+                                            font-size: 18px;
+                                            line-height: 26px;
+                                            color: #404145;
+                                            cursor: pointer;
+                                            font-weight: 700;
+                                            margin-right: 8px;
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                text-decoration: underline;
+                                            }
+                                        }
+
+
+                                    }
+
+                                    .info-bottom {
+                                        box-sizing: border-box;
+                                        gap: 12px;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        flex-direction: row;
+                                        align-items: baseline;
+                                        display: flex;
+                                        width: 100%;
+
+                                        .tover-rank {
+                                            margin-right: 0 !important;
+                                            display: flex;
+                                            cursor: pointer;
+                                            line-height: 24px;
+                                            font-size: 16px;
+
+                                            .s {
+                                                display: inline-flex;
+                                                padding-bottom: 4px;
+
+                                                .o-star {
+                                                    background: none;
+                                                    border: none;
+                                                    display: inline-block;
+                                                    margin: 0;
+                                                    padding: 0;
+                                                    fill: #404145;
+
+                                                    svg {
+                                                        float: left;
+                                                        height: 100%;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+
+                                            .rate-score {
+                                                padding-left: 4px;
+                                                color: #404145;
+                                            }
+
+                                            .count {
+                                                color: #74767e;
+                                                padding-left: 4px;
+
+                                                .count-n {
+                                                    text-decoration-line: underline;
+                                                }
+                                            }
+                                        }
+
+                                        .di {
+                                            box-sizing: border-box;
+                                            align-self: center;
+                                            height: 1em;
+
+                                            .div {
+                                                box-sizing: border-box;
+                                                border-style: solid;
+                                                border-left-width: 1px;
+                                                width: 0;
+                                                height: 100%;
+                                                border-color: #e4e5e7;
+                                            }
+                                        }
+
+                                        .ord {
+                                            color: #74767e;
+                                            margin-right: 8px;
+                                            align-self: baseline;
+                                            font-size: 14px;
+                                            display: flex;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .gig-galery {
+                    display: block;
+                    border: 0;
+                    width: auto;
+                    margin-bottom: 32px;
+
+                    @media screen and (min-width: 600px) {
+                        margin: 0 -32px;
+                    }
+
+                    @media screen and (min-width: 900px) {
+                        margin: 0;
+                        overflow: visible;
+                    }
+
+                    .galery {
+                        height: 427px;
+                        position: relative;
+
+                        .galery-wrapper {
+                            height: 100%;
+
+                            .galery-component {
+                                height: 100%;
+                                overflow: hidden;
+                                position: relative;
+                                width: 100%;
+
+                                .current {
+                                    width: 100%;
+                                    height: 100%;
+                                    left: 0;
+                                    position: absolute;
+
+                                    .image {
+                                        align-items: center;
+                                        display: flex;
+                                        height: 100%;
+                                        justify-content: center;
+                                        width: 100%;
+
+                                        .thumbnail {
+                                            align-items: center;
+                                            display: flex;
+                                            height: 100%;
+                                            justify-content: center;
+                                            position: relative;
+                                            transition: transform .4s;
+
+                                            img {
+                                                background: transparent url(https://fiverr-res.cloudinary.com/app_assets/fiverr_logo_loader.svg) no-repeat 50%;
+                                                background-size: 80px;
+                                                height: 100%;
+                                                max-height: 100%;
+                                                max-width: 100%;
+                                                min-height: 140px;
+                                                min-width: 140px;
+                                                -o-object-fit: contain;
+                                                object-fit: contain;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .gig-description {
+                    -webkit-box-ordinal-group: 71;
+                    -ms-flex-order: 70;
+                    -webkit-order: 70;
+                    order: 70;
+                    background: #fff;
+                    margin-bottom: 32px;
+
+                    @media screen and (min-width: 900px) {
+                        margin-bottom: 64px;
+                    }
+
+                    header {
+                        display: block;
+
+                        .section-title {
+                            color: #404145;
+                            font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                            font-weight: 700;
+                            font-size: 20px;
+                            line-height: 28px;
+                            padding-bottom: 25px;
+                            padding-top: 25px;
+
+                            @media screen and (min-width: 600px) {
+                                font-size: 32px;
+                                line-height: 120%;
+                            }
+                        }
+                    }
+
+                    .description-wrapper {
+                        padding-bottom: 20px;
+                        position: relative;
+
+                        .description-content {
+                            word-wrap: break-word;
+                            -webkit-box-sizing: border-box;
+                            box-sizing: border-box;
+                            color: #62646a;
+                            max-height: 200px;
+                            overflow: hidden;
+                            word-break: break-word;
+
+                            @media screen and (min-width: 600px) {
+                                max-height: none;
+                            }
+                        }
+                    }
+
+                    .metadata {
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                        border-top: 1px solid #dadbdd;
+                        display: flex;
+                        padding-top: 20px;
+
+                        @media screen and (min-width: 600px) {
+                            flex-flow: row wrap;
+                        }
+
+                        .metadata-attribute {
+                            @media screen and (min-width: 600px) {
+                                box-sizing: border-box;
+                                padding-right: 20px;
+                                width: 33%;
+                            }
+
+                            p {
+                                color: #95979d;
+                            }
+
+                            ul {
+                                display: flex;
+                                flex-wrap: wrap;
+                                padding-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .about-the-seller {
+                    color: #404145;
+                    font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 28px;
+                    padding-bottom: 25px;
+                    order: 91;
+
+                    @media screen and (min-width: 600px) {
+                        font-size: 32px;
+                        line-height: 120%;
+                    }
+                }
+
+                .profile-card {
+                    order: 100;
+                    margin-bottom: 32px;
+
+                    @media screen and (min-width: 900px) {
+                        margin-bottom: 64px;
+                    }
+
+                    .seller-card {
+                        line-height: 130%;
+                        position: relative;
+
+                        @media screen and (min-width: 900px) {
+                            position: static;
+                        }
+
+                        .seller-top {
+                            box-sizing: border-box;
+                            padding-bottom: 24px;
+
+                            .seller-avatar {
+                                box-sizing: border-box;
+                                gap: 8px;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                display: flex;
+                                width: 100%;
+
+                                @media screen and (min-width: 600px) {
+                                    gap: 16px;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-box-direction: normal;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: stretch;
+                                }
+
+                                .user-profile {
+                                    display: flex;
+
+                                    .pics {
+                                        position: relative;
+                                        width: 96px;
+                                        height: 96px;
+                                        font-size: 1.92em;
+
+                                        .pic-img {
+                                            border-radius: 50%;
+                                            display: block;
+                                            height: 100%;
+                                            position: absolute;
+                                            width: 100%;
+                                            z-index: 1;
+                                        }
+
+                                        .badge {
+                                            background-position: 0 0;
+                                            background-repeat: no-repeat;
+                                            background-size: 400%;
+                                            text-decoration: none;
+                                            background-image: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/gig_page_perseus/badges_english.cf7a2dc.svg);
+                                            height: 40px;
+                                            width: 40px;
+                                            border-radius: 50%;
+                                            bottom: 0;
+                                            overflow: hidden;
+                                            position: absolute;
+                                            right: 0;
+                                            z-index: 7;
+                                            background-position-x: -80px;
+                                        }
+                                    }
+                                }
+
+                                .seller-info {
+                                    box-sizing: border-box;
+                                    gap: 8px;
+                                    flex-direction: column;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-box-direction: normal;
+                                    justify-content: center;
+                                    display: flex;
+                                    width: 100%;
+
+                                    @media screen and (min-width: 600px) {
+                                        align-items: flex-start;
+                                    }
+
+                                    .seller-name {
+                                        box-sizing: border-box;
+                                        gap: 12px;
+                                        flex-direction: row;
+                                        align-items: baseline;
+                                        flex-wrap: wrap;
+                                        display: flex;
+                                        width: fit-content;
+
+                                        .name-item {
+                                            display: flex;
+                                            align-items: baseline;
+
+                                            .name {
+                                                color: #404145;
+                                                cursor: pointer;
+                                                font-weight: 700;
+                                                margin-right: 8px;
+
+                                                &:hover {
+                                                    text-decoration: underline;
+                                                }
+                                            }
+                                        }
+
+                                        .space {
+                                            box-sizing: border-box;
+                                            padding-top: 2px;
+                                            width: fit-content;
+                                            height: fit-content;
+                                            padding-left: 0;
+
+                                            @media screen and (min-width: 600px) {
+                                                padding-left: 28px;
+                                            }
+                                        }
+                                    }
+
+                                    .seller-sums {
+                                        text-align: center;
+
+                                        @media screen and (min-width: 600px) {
+                                            text-align: left;
+                                        }
+                                    }
+
+                                    .seller-rate {
+                                        box-sizing: border-box;
+                                        gap: 12px;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        display: flex;
+                                        width: fit-content;
+
+                                        .rate-rating {
+                                            align-items: center;
+                                            display: flex;
+                                            font-size: 16px;
+                                            line-height: 24px;
+
+                                            .stars {
+                                                display: inline-flex;
+                                                padding-bottom: 4px;
+
+                                                .orca-star {
+                                                    background: none;
+                                                    border: none;
+                                                    display: inline-block;
+                                                    margin: 0;
+                                                    padding: 0;
+                                                    fill: #404145;
+
+                                                    svg {
+                                                        float: left;
+                                                        height: 100%;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+
+                                            .rating-score {
+                                                padding-left: 4px;
+                                                color: #404145;
+                                            }
+
+                                            .rating-count {
+                                                color: #74767e;
+                                                padding-left: 4px;
+
+                                                .rating-count-number {
+                                                    text-decoration-line: underline;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .contact-me-btn {
+                                color: #62646a;
+                                transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                                font-weight: 600;
+                                line-height: 100%;
+                                padding: 12px 24px;
+                                position: relative;
+                                text-align: center;
+                                text-decoration: none;
+                                cursor: pointer;
+                                display: inline-block;
+                                border: 1px solid transparent;
+                                border-radius: 4px;
+                                background: none;
+                                border-color: #62646a;
+                                box-sizing: border-box;
+                                font-size: 14px;
+                                margin-top: 20px;
+                                width: 100%;
+
+                                &:hover {
+                                    border-color: transparent;
+                                    color: #fff;
+                                    background: #74767e;
+                                }
+
+                                @media screen and (min-width: 600px) {
+                                    width: auto;
+                                }
+                            }
+                        }
+
+                        .seller-bottom {
+                            border: 1px solid #dadbdd;
+                            border-radius: 3px;
+                            margin-top: 0;
+                            padding: 24px;
+
+                            .user-stats {
+                                display: flex;
+
+                                @media screen and (min-width: 600px) {
+                                    -webkit-box-orient: horizontal;
+                                    -webkit-box-direction: normal;
+                                    flex-flow: row wrap;
+                                }
+
+                                li {
+                                    box-sizing: border-box;
+                                    color: #74767e;
+                                    padding-bottom: 16px;
+
+                                    @media screen and (min-width: 600px) {
+                                        width: 50%;
+                                    }
+
+                                    .languages-tooltip {
+                                        display: inline-flex;
+
+                                        .lang {
+                                            display: inline-flex;
+                                            box-sizing: border-box;
+
+                                            .languages-tooltips {
+                                                font-weight: 700;
+                                                color: #62646a;
+                                                display: block;
+                                                padding-top: 4px;
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                            }
+
+                            .seller-desc {
+                                border-top: 1px solid #dadbdd;
+                                line-height: 150%;
+                                margin: 0;
+                                padding-top: 15px;
+                                text-align: left;
+
+                                .inner {
+                                    max-height: 70px;
+                                    overflow: hidden;
+                                    white-space: pre-line;
+
+                                    @media screen and (min-width: 600px) {
+                                        max-height: none;
+                                    }
+                                }
+                            }
+                        }
+
+                        .read-more {
+                            background: none;
+                            border: 0;
+                            color: #446ee7;
+                            display: block;
+                            font-size: 14px;
+                            margin-top: 15px;
+                            cursor: pointer;
+                            color: #404145;
+                            font-weight: 600;
+                            text-decoration: underline;
+
+                            @media screen and (min-width: 600px) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .faq {
+                    -webkit-box-ordinal-group: 171;
+                    -ms-flex-order: 170;
+                    -webkit-order: 170;
+                    order: 170;
+                    background: #fff;
+
+                    @media screen and (min-width: 900px) {
+                        margin-bottom: 64px;
+                    }
+
+                    .section-title {
+                        color: #404145;
+                        font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                        font-weight: 700;
+                        font-size: 20px;
+                        line-height: 28px;
+                        padding-bottom: 5px;
+
+                        @media screen and (min-width: 600px) {
+                            font-size: 32px;
+                            line-height: 120%;
+                        }
+
+                        .faq-collapser {
+                            fill: #74767e;
+                            background: none;
+                            border: none;
+                            margin: 0;
+                            padding: 0;
+                            transition: all .2s ease-in-out;
+                            transform: rotate(90deg);
+                            float: right;
+                            margin-top: 4px;
+
+                            @media screen and (min-width: 600px) {
+                                display: none;
+                            }
+
+                            svg {
+                                float: left;
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .faq-group {
+                        .faq-item {
+                            display: block;
+                            border: 0;
+                            overflow: hidden;
+                            text-align: left;
+                            border-bottom: 1px solid #dadbdd;
+
+                            .faq-item-wrapper {
+                                cursor: pointer;
+                                display: -webkit-box;
+                                display: -webkit-flex;
+                                display: -ms-flexbox;
+                                display: flex;
+                                padding: 20px 0;
+                                font-weight: 600;
+
+                                .faq-title {
+                                    -webkit-box-flex: 1;
+                                    -ms-flex-positive: 1;
+                                    -webkit-flex-grow: 1;
+                                    flex-grow: 1;
+                                }
+
+                                .chevron {
+                                    align-items: center;
+                                    color: inherit;
+                                    display: inline-flex;
+                                    justify-content: flex-end;
+                                    width: 25px;
+
+                                    .c-i {
+                                        fill: #74767e;
+                                        background: none;
+                                        border: none;
+                                        margin: 0;
+                                        padding: 0;
+                                        cursor: pointer;
+                                        display: inline-block;
+                                        position: relative;
+                                        top: 1px;
+                                        transform: rotate(90deg);
+                                        transition: .2s;
+
+                                        svg {
+                                            float: left;
+                                            height: 100%;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .m-b-0 {
+                    margin-bottom: 0 !important;
+
+                    @media screen and (min-width: 900px) {
+                        margin-bottom: 64px;
+                    }
+                }
+
+                .gig-review {
+                    -webkit-box-ordinal-group: 181;
+                    -ms-flex-order: 180;
+                    -webkit-order: 180;
+                    order: 180;
+                    display: none;
+                    margin-bottom: 32px;
+
+                    @media screen and (min-width: 600px) {
+                        display: block;
+                    }
+
+                    @media screen and (min-width: 900px) {
+                        margin-bottom: 64px;
+                    }
+
+                    .co-text {
+                        color: #404145;
+                        margin-bottom: 16px;
+                        font-size: 20px;
+                        line-height: 28px;
+                        font-weight: 700;
+                    }
+
+                    .review-packages {
+                        background-color: #fff;
+                        -webkit-box-ordinal-group: 181;
+                        -ms-flex-order: 180;
+                        -webkit-order: 180;
+                        order: 180;
+
+                        .review-header {
+                            display: block;
+                            position: relative;
+
+                            .details {
+                                padding-bottom: 10px;
+                                width: 100%;
+
+                                @media screen and (min-width: 600px) {
+                                    -webkit-box-pack: justify;
+                                    -ms-flex-pack: justify;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding-bottom: 12px;
+                                }
+
+                                .txt-dis {
+                                    color: #404145;
+                                    font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                                    font-weight: 700;
+                                    font-size: 16px;
+                                    line-height: 140%;
+                                    display: inline-block;
+                                    padding-bottom: 10px;
+
+                                    @media screen and (min-width: 600px) {
+                                        font-size: 16px;
+                                        display: block;
+                                        padding-bottom: 0;
+                                        width: 100%;
+                                    }
+
+                                    .ful-txt {
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        display: -webkit-box;
+                                        display: -webkit-flex;
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 8px;
+
+                                        @media screen and (min-width: 600px) {
+                                            -webkit-box-orient: horizontal;
+                                            -webkit-box-direction: normal;
+                                            -webkit-flex-direction: row;
+                                            -ms-flex-direction: row;
+                                            flex-direction: row;
+                                            gap: 12px;
+                                        }
+
+                                        .orca-rate {
+                                            font-size: 14px;
+                                            line-height: 21px;
+                                            align-items: center;
+                                            display: flex;
+
+                                            .stars {
+                                                display: inline-flex;
+                                                padding-bottom: 4px;
+
+                                                .orca-star {
+                                                    background: none;
+                                                    border: none;
+                                                    display: inline-block;
+                                                    margin: 0;
+                                                    padding: 0;
+                                                    fill: #404145;
+
+                                                    svg {
+                                                        float: left;
+                                                        height: 100%;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+
+                                            .rating-score {
+                                                padding-left: 4px;
+                                                color: #404145;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+
+                        .breakdown-wrapper {
+                            -webkit-box-orient: horizontal;
+                            -webkit-box-direction: normal;
+                            display: flex;
+                            margin-left: -6px;
+                            margin-right: -6px;
+                            position: relative;
+                            box-sizing: border-box;
+                            padding-bottom: 24px;
+
+                            @media screen and (min-width: 600px) {
+                                margin-left: -8px;
+                                margin-right: -8px;
+                            }
+
+                            @media screen and (min-width: 900px) {
+                                margin-left: -8px;
+                                margin-right: -8px;
+                            }
+
+                            @media screen and (min-width: 1160px) {
+                                margin-left: -16px;
+                                margin-right: -16px;
+                            }
+
+                            @media screen and (min-width: 1760px) {
+                                margin-left: -16px;
+                                margin-right: -16px;
+                            }
+
+                            .break-left {
+                                box-sizing: border-box;
+                                flex: 0 0 auto;
+                                flex-basis: 100%;
+                                max-width: 100%;
+                                padding: 0 6px;
+
+                                @media screen and (min-width: 600px) {
+                                    padding: 0 8px;
+                                }
+
+                                @media screen and (min-width: 900px) {
+                                    padding: 0 8px;
+                                }
+
+                                @media screen and (min-width: 1160px) {
+                                    padding: 0 16px;
+                                }
+
+                                @media screen and (min-width: 1760px) {
+                                    padding: 0 16px;
+                                }
+
+                                .stars-counter {
+                                    border-collapse: collapse;
+                                    border-spacing: 0;
+                                    text-indent: 0;
+                                    width: 100%;
+
+                                    tr {
+                                        white-space: nowrap;
+
+                                        td {
+                                            font-weight: 400;
+                                            vertical-align: top;
+                                            padding-bottom: 4px;
+
+                                            .stars-filter-wrapper {
+                                                .stars-filter {
+                                                    color: #222325;
+                                                    border-radius: 4px;
+                                                    box-sizing: border-box;
+                                                    cursor: pointer;
+                                                    display: inline-block;
+                                                    font-size: 16px;
+                                                    font-weight: 600;
+                                                    line-height: 100%;
+                                                    position: relative;
+                                                    text-decoration: none;
+                                                    transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                                                    background: none;
+                                                    border: none;
+                                                    padding: 6px;
+                                                    text-align: left;
+
+                                                    &:hover {
+                                                        text-decoration: none;
+                                                        background: #e4e5e7;
+                                                        color: #222325;
+
+                                                    }
+                                                }
+                                            }
+
+
+
+                                        }
+
+                                        .progress-bar-container {
+                                            margin: auto;
+                                            padding: 10px 10px 0 6px;
+                                            width: 100%;
+
+                                            .star-bar {
+                                                align-items: center;
+                                                display: flex;
+
+                                                .bar {
+                                                    -webkit-box-flex: 1;
+                                                    background: #e4e5e7;
+                                                    border-radius: 999px;
+                                                    flex-grow: 1;
+                                                    height: 8px;
+                                                    position: relative;
+
+                                                    .star-progress-shape {
+                                                        background: #1dbf73;
+                                                        border-radius: 999px;
+                                                        height: 100%;
+                                                        left: 0;
+                                                        position: absolute;
+                                                        z-index: 1;
+                                                        background-color: #222325;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .star-num {
+                                            color: #222325;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .break-right {
+                                -webkit-box-flex: 0;
+                                box-sizing: border-box;
+                                -webkit-flex: 0 0 auto;
+                                flex: 0 0 auto;
+                                -webkit-flex-basis: 100%;
+                                flex-basis: 100%;
+                                max-width: 100%;
+                                padding: 0 6px;
+
+                                @media screen and (min-width: 600px) {
+                                    flex-basis: 50%;
+                                    max-width: 50%;
+                                    padding: 0 8px;
+                                }
+
+                                @media screen and (min-width: 900px) {
+                                    padding: 0 8px;
+                                }
+
+                                @media screen and (min-width: 1160px) {
+                                    padding: 0 16px;
+                                }
+
+                                @media screen and (min-width: 1760px) {
+                                    padding: 0 16px
+                                }
+
+                                .ranking {
+                                    border-top: 1px solid #dadbdd;
+                                    margin-top: 20px;
+                                    padding-top: 24px;
+
+                                    @media screen and (min-width: 600px) {
+                                        border-top: 0;
+                                        margin-top: 0;
+                                        padding-top: 1px;
+                                    }
+
+                                    .text-r {
+                                        color: #404145;
+                                        font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                                        font-size: 16px;
+                                        line-height: 140%;
+                                        font-weight: 600;
+                                        padding-bottom: 16px;
+
+                                        @media screen and (min-width: 600px) {
+                                            font-size: 16px;
+                                        }
+                                    }
+
+                                    ul {
+                                        list-style: none;
+                                        list-style-image: none;
+                                        margin: 0;
+                                        padding: 0;
+
+                                        li {
+                                            -webkit-box-pack: justify;
+                                            -ms-flex-pack: justify;
+                                            color: #95979d;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            padding-bottom: 8px;
+
+                                            span {
+                                                color: #62646a;
+                                                margin-left: 12px;
+                                                white-space: nowrap;
+
+                                                .o-rate {
+                                                    font-size: 14px;
+                                                    line-height: 21px;
+                                                    align-items: center;
+                                                    display: flex;
+
+                                                    .stars {
+                                                        display: inline-flex;
+                                                        padding-bottom: 4px;
+
+                                                        .o-star {
+                                                            background: none;
+                                                            border: none;
+                                                            display: inline-block;
+                                                            margin: 0;
+                                                            padding: 0;
+                                                            fill: #404145;
+
+                                                            svg {
+                                                                float: left;
+                                                                height: 100%;
+                                                                width: 100%;
+                                                            }
+                                                        }
+                                                    }
+
+                                                    .r-score {
+                                                        padding-left: 4px;
+                                                        color: #404145;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .filter-wrapper {
+                            padding-top: 8px;
+
+                            .filter-list {
+                                display: block;
+
+                                .search-box-filter-wrapper {
+                                    .search-box-filter {
+                                        display: flex;
+                                        margin-bottom: 16px;
+
+                                        .search-input {
+                                            display: inline-block;
+                                            position: relative;
+                                            max-width: 356px;
+                                            width: 100%;
+
+                                            .input {
+                                                position: relative;
+
+                                                .search-box {
+                                                    border: 1px solid #c5c6c9;
+                                                    border-radius: 4px;
+                                                    box-shadow: none;
+                                                    box-sizing: border-box;
+                                                    color: #404145;
+                                                    font: inherit;
+                                                    padding: 8px 12px;
+                                                    transition: .15s ease-in-out;
+                                                    width: 95%;
+                                                    padding-right: 40px;
+                                                }
+
+                                                .search-icon {
+                                                    background: none;
+                                                    border: none;
+                                                    display: inline-block;
+                                                    top: 50%;
+                                                    transform: translateY(-50%);
+                                                    position: absolute;
+                                                    margin: 0;
+                                                    cursor: pointer;
+                                                    background-color: #222325;
+                                                    border-radius: 0 4px 4px 0 !important;
+                                                    height: 42px !important;
+                                                    padding: 13px 16px !important;
+                                                    right: 0;
+                                                    width: 48px !important;
+                                                    fill: white;
+
+                                                    svg {
+                                                        float: left;
+                                                        height: 100%;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .filter-reviews-wrapper {
+                                    .filter-reviews {
+                                        margin-bottom: 4px;
+                                        max-width: 356px;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        -webkit-align-items: center;
+                                        align-items: center;
+                                        width: 100%;
+                                        display: block;
+
+                                        .filter-dropdown-text {
+                                            font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+                                            font-size: 16px;
+                                            line-height: 24px;
+                                            padding-bottom: 16px;
+                                            font-weight: 400;
+                                            margin: auto;
+                                            color: #404145;
+
+                                            @media screen and (min-width: 600px) {
+                                                font-size: 18px;
+                                                display: contents;
+                                            }
+                                        }
+
+                                        .filter-reviews-select {
+                                            display: inline-flex;
+                                            width: 100%;
+
+                                            @media screen and (min-width: 600px) {
+                                                width: auto;
+                                            }
+
+                                            .filter-reviews-select-content {
+                                                appearance: none;
+                                                background: #fff;
+                                                border-radius: 4px;
+                                                color: inherit;
+                                                font-size: 16px;
+                                                line-height: 24px;
+                                                padding: 8px 32px 8px 12px;
+                                                position: relative;
+                                                text-overflow: ellipsis;
+                                                display: inline-flex;
+                                                transition: .15s ease-in-out;
+                                                box-sizing: border-box;
+                                                width: 100%;
+                                                user-select: none;
+                                                cursor: pointer;
+                                                border: 1px solid #c5c6c9;
+                                                color: inherit;
+
+                                                @media screen and (min-width: 600px) {
+                                                    border: none;
+                                                    color: #404145;
+                                                    font-weight: 600;
+                                                    padding-left: 8px;
+                                                }
+
+                                                .s-c {
+                                                    overflow: hidden;
+                                                    position: relative;
+                                                    text-overflow: ellipsis;
+                                                    white-space: nowrap;
+                                                }
+
+                                                .s-i {
+                                                    fill: #74767e;
+                                                    background: none;
+                                                    border: none;
+                                                    display: inline-block;
+                                                    margin: 0;
+                                                    padding: 0;
+                                                    transition: .15s ease-in-out;
+                                                    transform: translateY(-50%);
+                                                    pointer-events: none;
+                                                    position: absolute;
+                                                    right: 12px;
+                                                    top: 50%;
+
+                                                    svg {
+                                                        float: left;
+                                                        height: 100%;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                .toggle-filter {
+                                    display: inline-flex;
+                                    font-weight: 400;
+                                    margin-bottom: 16px;
+                                    min-height: 24px;
+                                    padding-right: 24px;
+
+                                    .toggle-filter-label {
+                                        -webkit-box-orient: horizontal;
+                                        -webkit-box-direction: normal;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        -webkit-align-items: center;
+                                        align-items: center;
+                                        color: #404145;
+                                        display: inline-flex;
+                                        flex-direction: row;
+
+                                        .cb {
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            align-items: center;
+                                            background-color: #fff;
+                                            border: 1px solid #c5c6c9;
+                                            border-radius: 2px;
+                                            box-sizing: border-box;
+                                            cursor: pointer;
+                                            display: inline-flex;
+                                            height: 18px;
+                                            justify-content: center;
+                                            margin-right: 8px;
+                                            min-width: 18px;
+                                            position: relative;
+                                            width: 18px;
+                                            transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                                            display: none;
+
+                                            .cb-i {
+                                                margin: 0;
+                                                padding: 0;
+                                                background: none;
+                                                border: none;
+                                                transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                                                transform-origin: 50% 50%;
+                                                transform: scale(.5);
+                                                fill: #62646a;
+                                                display: inline-block;
+                                                font-style: inherit;
+                                                font-weight: inherit;
+                                                opacity: 0;
+                                                pointer-events: none;
+
+
+                                                svg {
+                                                    float: left;
+                                                    height: 100%;
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+
+                                        .toggle-filter-text {
+                                            color: #62646a;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .reviews-wrap {
+                            position: relative;
+                            margin-top: 32px;
+
+                            @media screen and (min-width: 600px) {
+                                margin-top: 40px;
+                            }
+
+                            .review-list {
+                                .review-item-component-wrapper {
+                                    .review-item-component {
+                                        border-top: 1px solid #dadbdd;
+                                        padding: 32px 0;
+
+                                        @media screen and (min-width: 600px) {
+                                            padding: 40px 0;
+                                        }
+
+                                        .review-header-container {
+                                            width: 100%;
+
+                                            .item-center {
+                                                display: flex;
+                                                align-items: center;
+
+                                                .user-profile {
+                                                    margin-right: 16px;
+                                                    display: none;
+
+                                                    @media screen and (min-width: 600px) {
+                                                        display: flex;
+                                                    }
+
+                                                    .profile-pic {
+                                                        position: relative;
+                                                        width: 48px;
+                                                        height: 48px;
+                                                        font-size: 1em;
+
+                                                        .custom-profile-img {
+                                                            font-size: 14px;
+                                                            line-height: 21px;
+                                                            box-sizing: border-box;
+                                                            display: inline-flex;
+                                                            position: relative;
+                                                            color: #b5b6ba;
+                                                            font-weight: 400;
+
+                                                            .profile-fig {
+                                                                border: 0;
+                                                                display: inline-flex;
+                                                                position: relative;
+                                                                justify-content: center;
+                                                                margin: 0;
+                                                                min-width: 1em;
+                                                                overflow: hidden;
+                                                                align-items: center;
+                                                                border-radius: 50%;
+                                                                height: 1em;
+                                                                -ms-flex-align: center;
+                                                                -webkit-box-pack: center;
+                                                                -ms-flex-pack: center;
+                                                                -webkit-align-items: center;
+                                                                font-size: 48px;
+                                                                background-color: #A866EC;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                .user-name {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    -webkit-box-orient: vertical;
+                                                    -webkit-box-direction: normal;
+
+                                                    .user-info {
+                                                        display: flex;
+
+                                                        .user-profile-mobile {
+                                                            margin-right: 16px;
+                                                            display: flex;
+
+                                                            @media screen and (min-width: 600px) {
+                                                                display: none;
+                                                            }
+
+                                                            .profile-pict {
+                                                                position: relative;
+                                                                width: 48px;
+                                                                height: 48px;
+                                                                font-size: 1em;
+
+                                                                .custom-profile-img {
+                                                                    font-size: 14px;
+                                                                    line-height: 21px;
+                                                                    box-sizing: border-box;
+                                                                    display: inline-flex;
+                                                                    position: relative;
+                                                                    color: #b5b6ba;
+                                                                    font-weight: 400;
+                                                                    border-radius: 50%;
+
+                                                                    .profile-fig {
+                                                                        border: 0;
+                                                                        display: inline-flex;
+                                                                        position: relative;
+                                                                        justify-content: center;
+                                                                        margin: 0;
+                                                                        min-width: 1em;
+                                                                        overflow: hidden;
+                                                                        align-items: center;
+                                                                        border-radius: 50%;
+                                                                        height: 1em;
+                                                                        -webkit-box-pack: center;
+                                                                        -webkit-box-align: center;
+                                                                        font-size: 48px;
+                                                                        background-color: #A866EC;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        .review-details {
+                                                            flex-wrap: wrap;
+                                                            align-items: center;
+                                                            display: flex;
+
+                                                            .username {
+                                                                color: #404145;
+                                                                font-size: 16px;
+                                                                line-height: 24px;
+                                                            }
+                                                        }
+                                                    }
+
+                                                    .review-sub-details {
+                                                        display: flex;
+                                                        margin-top: 12px;
+
+                                                        @media screen and (min-width: 600px) {
+                                                            margin-top: 8px;
+                                                        }
+
+                                                        .country {
+                                                            -webkit-box-align: center;
+                                                            -ms-flex-align: center;
+                                                            -webkit-align-items: center;
+                                                            align-items: center;
+                                                            display: -webkit-inline-box;
+                                                            display: -webkit-inline-flex;
+                                                            display: -ms-inline-flexbox;
+                                                            display: inline-flex;
+
+                                                            .country-flag {
+                                                                height: 20px;
+                                                                margin-top: -3px;
+                                                                width: 20px;
+                                                            }
+
+                                                            .country-name {
+                                                                line-height: 21px;
+                                                                color: #62646a;
+                                                                font-size: 14px;
+                                                                padding-left: 8px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .r-detail {
+                                            margin-top: 16px;
+
+                                            @media screen and (min-width: 600px) {
+                                                margin-left: 64px;
+                                                margin-top: 20px;
+                                            }
+
+                                            .s-review {
+                                                margin-top: 20px;
+                                                display: flex;
+                                                flex-direction: column;
+
+                                                @media screen and (min-width: 600px) {
+                                                    flex-direction: row;
+                                                }
+
+                                                .orca-rating {
+                                                    font-size: 14px;
+                                                    line-height: 21px;
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    -webkit-align-items: center;
+                                                    align-items: center;
+                                                    display: -webkit-box;
+                                                    display: -webkit-flex;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+
+                                                    .star-orca {
+                                                        display: inline-flex;
+                                                        padding-bottom: 4px;
+
+                                                        .orca-star {
+                                                            background: none;
+                                                            border: none;
+                                                            display: inline-block;
+                                                            margin: 0;
+                                                            padding: 0;
+                                                            fill: #404145;
+
+                                                            svg {
+                                                                float: left;
+                                                                height: 100%;
+                                                                width: 100%;
+                                                            }
+                                                        }
+                                                    }
+
+                                                    .rating-score {
+                                                        padding-left: 4px;
+                                                        color: #404145;
+                                                    }
+                                                }
+
+                                                .divider {
+                                                    display: none;
+                                                    border-right: 1px solid #e4e5e7;
+                                                    margin: 2px 8px;
+
+                                                    @media screen and (min-width: 600px) {
+                                                        display: flex;
+                                                    }
+                                                }
+
+                                                .time {
+                                                    display: flex;
+
+                                                    .time-ago {
+                                                        font-size: 14px;
+                                                        line-height: 21px;
+                                                    }
+                                                }
+                                            }
+
+                                            .r-desc {
+                                                margin-bottom: 0 !important;
+                                                margin: 16px 0;
+
+                                                @media screen and (min-width: 600px) {
+                                                    margin: 12px 0;
+                                                }
+
+                                                p {
+                                                    word-wrap: break-word;
+                                                    color: #404145;
+                                                }
+                                            }
+
+                                            .r-footer {
+                                                flex-direction: column;
+                                                display: flex;
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+
+                                                .helpful-footer {
+                                                    margin-top: 16px;
+
+                                                    .helpful-thumb {
+                                                        align-items: center;
+                                                        color: #b5b6ba;
+                                                        display: flex;
+
+                                                        .helpful-text {
+                                                            margin-right: 12px;
+                                                            font-size: 14px;
+                                                            color: #404145;
+                                                            font-weight: 600;
+                                                            line-height: 25px;
+                                                        }
+
+                                                        .thumb-icon-wrapper {
+                                                            display: flex;
+
+                                                            .m-thumb {
+                                                                margin-right: 12px;
+
+                                                                .t-icon {
+                                                                    font-size: 14px;
+                                                                    line-height: 21px;
+                                                                    display: flex;
+                                                                    font-weight: 600;
+                                                                    padding: 2px 0;
+                                                                    align-items: center;
+                                                                    color: #404145;
+                                                                    cursor: pointer;
+
+                                                                    .thumbs-icon {
+                                                                        background: none;
+                                                                        border: none;
+                                                                        display: inline-block;
+                                                                        margin: 0;
+                                                                        padding: 0;
+                                                                        fill: #404145;
+                                                                        padding-right: 4px;
+
+                                                                        svg {
+                                                                            float: left;
+                                                                            height: 100%;
+                                                                            width: 100%;
+                                                                        }
+                                                                    }
+
+                                                                    .thumb-title {
+                                                                        user-select: none;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                .helpful-respond {
+                                                    margin-top: 24px;
+
+                                                    .review-seller-comment-wrapper {
+                                                        .seller-info {
+                                                            display: flex;
+                                                            align-items: center;
+
+                                                            .seller-img {
+                                                                display: flex;
+
+                                                                .seller-pic {
+                                                                    position: relative;
+                                                                    width: 32px;
+                                                                    height: 32px;
+                                                                    font-size: 1em;
+
+                                                                    .seller-profile-pic {
+                                                                        border-radius: 50%;
+                                                                        display: block;
+                                                                        height: 100%;
+                                                                        position: absolute;
+                                                                        width: 100%;
+                                                                        z-index: 1;
+                                                                        color: #b5b6ba;
+                                                                        font-size: 14px;
+                                                                        font-weight: 400;
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            .seller-name {
+                                                                color: #404145;
+                                                                margin-left: 12px;
+                                                                font-size: 16px;
+                                                                line-height: 24px;
+                                                                font-weight: 700;
+                                                            }
+                                                        }
+
+                                                        .seller-respond {
+                                                            margin-left: 44px;
+
+                                                            .seller-respond-info {
+                                                                margin-bottom: 0 !important;
+                                                                margin: 16px 0;
+
+                                                                @media screen and (min-width: 600px) {
+                                                                    margin: 12px 0;
+                                                                }
+
+                                                                p {
+                                                                    word-wrap: break-word;
+                                                                    color: #404145;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

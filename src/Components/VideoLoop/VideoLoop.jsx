@@ -18,7 +18,7 @@ const VideoLoop = () => {
     setSelectedVideo(null);
     setShowVideoModel(false);
   };
-  console.log(video);
+  // console.log(video);
   return (
     <div className='v-container'>
       <div className='slider'>

@@ -18,6 +18,7 @@ const VideoModel = ({ onClose }) => {
                         className='play-video'
                         controls
                         loop
+                        playing
                     />
                 </section>
             </div>

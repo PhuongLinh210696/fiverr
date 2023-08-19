@@ -1,25 +1,25 @@
 import { https } from "./config";
 
 export const userService = {
-  getUsers: () => {
+  getUser: (id) => {
     return https.get("api/users");
   },
-  getUsersById: (id) => {
+  addUser: (data) => {
+    return https.post("api/users", data)
+  },
+  deleteUser: (id) => {
+    return https.delete(`api/users/${id}`);
+  },
+  getUserPage: (id) => {
+    return https.get("api/user/phan-trang-tim-kiem")
+  },
+  getUserById: (id) => {
     return https.get(`api/users/${id}`);
   },
-  addUsers: (data) => {
-    return https.post("api/users", data);
+  addUserById: (id) => {
+    return https.put(`api/users/${id}`);
   },
-  updateUsers: (data,id) => { 
-    return https.put(`api/users/${id}`,data);
-   },
-  searchUsers: (nameUser) => {
-    return https.get(`api/users/search/${nameUser}`);
+  getUserSearch: (id) => {
+    return https.get(`api/users/search/${id}`);
   },
-  deleteUsersId: (id) => {
-    return https.delete(`api/users?id=${id}`);
-  },
-  uploadAvartar: (data) =>{
-    return https.post("api/users/upload-avatar",data);
-  }
 };

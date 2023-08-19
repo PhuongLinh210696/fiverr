@@ -16,4 +16,4 @@ export const saveLocal = (key,value) => {
 
   export const deleteLocal = (key) => { 
     localStorage.removeItem(key);
-   }
+}

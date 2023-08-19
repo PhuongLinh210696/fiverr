@@ -1,0 +1,515 @@
+.user-data {
+    background: #f7f7f7;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0 40px;
+
+    .row-flex {
+        box-sizing: border-box;
+        position: relative;
+        max-width: 1240px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        justify-content: space-between;
+        min-height: 2000px;
+        overflow-x: hidden;
+        display: flex;
+
+        @media screen and (min-width: 1260px) {
+            padding: 0;
+        }
+
+        .info-col {
+            display: block;
+            width: 400px;
+
+            .info-component {
+                margin-bottom: 30px;
+
+                .seller-card {
+                    position: relative;
+                    background-color: #fff;
+                    border: 1px solid #dadbdd;
+                    padding: 30px;
+                    font-size: 14px;
+                    line-height: 130%;
+
+                    .user-indicate {
+                        position: absolute;
+                        right: 0px;
+                        height: 20px;
+                        left: 0px;
+
+                        .indi {
+                            text-transform: capitalize;
+                            margin-bottom: 5px;
+                            padding: 0 6px;
+                            border: 1px solid #1dbf73;
+                            border-radius: 12px;
+                            color: #1dbf73;
+                            position: absolute;
+                            right: 30px;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: center;
+                            -webkit-box-pack: center;
+                            -ms-flex-pack: center;
+                            justify-content: center;
+                            z-index: 1;
+
+                            .dot {
+                                font-size: 24px;
+                                line-height: 18px;
+                                display: inline-block;
+                                margin-right: 4px;
+                            }
+                        }
+                    }
+
+                    .user-profile-info {
+                        .flex-center {
+                            display: flex;
+                            -webkit-box-pack: center;
+                            -ms-flex-pack: center;
+                            justify-content: center;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: center;
+
+                            .user-profile-img {
+                                display: flex;
+                                margin-bottom: 15px;
+                                justify-content: center;
+
+                                .profile-pic {
+                                    position: relative;
+                                    cursor: pointer;
+                                    width: 150px;
+                                    height: 150px;
+                                    font-size: 3em;
+
+                                    .camera-icon-wrapper {
+                                        position: absolute;
+                                        opacity: 0;
+                                        z-index: 2;
+
+                                        .camera-input-icon {
+                                            display: inline-block;
+                                            background: none;
+                                            border: none;
+                                            padding: 0;
+                                            margin: 0;
+                                            transform: translate(-50%, -50%);
+                                            position: absolute;
+                                            left: 50%;
+                                            top: 50%;
+
+                                            svg {
+                                                float: left;
+                                                height: 100%;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    &:hover {
+                                        .camera-icon-wrapper {
+                                            opacity: 1;
+                                            background: rgba(0, 0, 0, .65);
+                                            border-radius: 50%;
+                                            width: 100%;
+                                            height: 100%;
+                                            -webkit-transition: opacity .3s ease-in-out;
+                                            transition: opacity .3s ease-in-out;
+                                        }
+                                    }
+
+                                    .hidden {
+                                        vertical-align: middle;
+                                        display: none !important;
+                                        visibility: hidden !important;
+                                    }
+
+                                    .a-border {
+                                        box-sizing: border-box;
+                                        display: inline-flex;
+                                        position: relative;
+                                        border-radius: 50%;
+
+                                        .fig-i {
+                                            display: inline-flex;
+                                            position: relative;
+                                            margin: 0;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                            min-width: 1em;
+                                            height: 1em;
+                                            border-radius: 50%;
+                                            overflow: hidden;
+                                            font-size: 150px;
+                                            background-color: rgb(193, 74, 131);
+
+                                            img {
+                                                position: absolute;
+                                                z-index: 1;
+                                                width: 100%;
+                                                height: 100%;
+                                                display: block;
+                                                border-radius: 50%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .user-profile-label {
+                            .username-line {
+                                display: flex;
+                                -webkit-box-orient: horizontal;
+                                -webkit-box-direction: normal;
+                                -ms-flex-direction: row;
+                                flex-direction: row;
+                                -webkit-box-pack: center;
+                                -ms-flex-pack: center;
+                                justify-content: center;
+
+                                .mb8 {
+                                    margin-bottom: 8px;
+
+                                    .flex {
+                                        display: flex;
+                                        justify-content: center;
+
+                                        .display-name-tooltip {
+                                            z-index: 8 !important;
+                                            padding: 0 !important;
+                                            display: inline-flex;
+
+                                            .display-name {
+                                                display: inline-flex;
+                                                box-sizing: border-box;
+
+                                                .btn-name {
+                                                    font-size: 20px;
+                                                    line-height: 28px;
+                                                    font-weight: 700;
+                                                    color: #222325;
+                                                    cursor: default;
+                                                    background: none;
+                                                    border: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                            }
+
+                            .outline-wrapper {
+                                font-size: 14px;
+                                line-height: 140%;
+                                text-align: center;
+
+                                .liner-and-pen {
+                                    display: flex;
+                                    -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                    align-items: center;
+                                    -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                    justify-content: center;
+
+                                    .icn-edit {
+                                        display: inline-block;
+                                        background: none;
+                                        border: none;
+                                        padding: 0;
+                                        margin: 0;
+                                        cursor: pointer;
+                                        margin-left: 4px;
+
+                                        svg {
+                                            float: left;
+                                            height: 100%;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .user-stats-desc {
+                        .user-stats {
+                            padding-top: 20px;
+                            border-top: 1px solid #dadbdd;
+                            margin-top: 24px;
+
+                            .location {
+                                position: relative;
+                                margin-bottom: 16px;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-pack: justify;
+                                -ms-flex-pack: justify;
+                                justify-content: space-between;
+
+                                .user-stats-icon {
+                                    display: inline-block;
+                                    background: none;
+                                    border: none;
+                                    padding: 0;
+                                    margin: 0;
+                                    margin-right: 12px;
+
+                                    svg {
+                                        float: left;
+                                        height: 100%;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            .member-since {
+                                position: relative;
+                                margin-bottom: 16px;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-pack: justify;
+                                -ms-flex-pack: justify;
+                                justify-content: space-between;
+
+                                .user-stats-icon1 {
+                                    display: inline-block;
+                                    background: none;
+                                    border: none;
+                                    padding: 0;
+                                    margin: 0;
+                                    margin-right: 12px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .user-segmentation {
+                display: block;
+
+                .mp-seller-profile {
+                    .form-thin {
+                        article {
+                            background-color: #fff;
+                            border: 1px solid #ddd;
+                            padding: 30px;
+
+                            .f-overview {
+                                border-bottom: 1px solid #ddd;
+                                padding-bottom: 10px;
+                                margin-bottom: 30px;
+
+                                .description {
+                                    font-size: 14px;
+                                    position: relative;
+                                    min-height: 0;
+                                    padding: 0;
+                                    padding-top: 0;
+                                    border-bottom: 0;
+                                    padding-bottom: 20px;
+
+                                    aside {
+                                        display: block;
+                                        width: auto;
+                                        vertical-align: top;
+
+                                        h3 {
+                                            font-family: macan, helvetica neue, Helvetica, Arial, sans-serif;
+                                            color: #0e0e0f;
+                                            font-size: 16px;
+                                            font-weight: 700;
+                                            padding-bottom: 7px;
+                                            line-height: 120%;
+
+                                            @media screen and (max-width: 600px) {
+                                                font-size: 28px;
+                                            }
+                                        }
+
+                                        .add {
+                                            color: #00698c;
+                                            font-size: 14px;
+                                            font-weight: 400;
+                                            float: right;
+                                            display: inline-block;
+                                        }
+                                    }
+
+                                    section {
+                                        width: 100%;
+                                        padding-top: 10px;
+                                        display: inline-block;
+
+                                        p {
+                                            line-height: 20px;
+                                        }
+
+                                        .counter {
+                                            float: right;
+                                            padding: 5px 0 0;
+                                            display: none !important;
+                                            visibility: hidden !important;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .f-lang {
+                                border-bottom: 1px solid #ddd;
+                                padding-bottom: 10px;
+                                margin-bottom: 30px;
+
+                                .langs {
+                                    position: relative;
+                                    min-height: 0;
+                                    padding: 0;
+                                    padding-top: 0;
+                                    border-bottom: 0;
+                                    padding-bottom: 0;
+
+                                    aside {
+                                        vertical-align: top;
+                                        display: block;
+                                        width: auto;
+
+                                        h3 {
+                                            position: relative;
+                                            line-height: 120%;
+                                            color: #0e0e0f;
+                                            font-size: 16px;
+                                            font-weight: 700;
+                                            padding-bottom: 7px;
+
+                                            .add {
+                                                color: #00698c;
+                                                font-size: 14px;
+                                                font-weight: 400;
+                                                float: right;
+                                                display: inline-block;
+                                            }
+                                        }
+
+                                        .question {
+                                            line-height: 20px;
+                                            font-size: 14px;
+                                            color: #555;
+                                            padding-top: 5px;
+                                        }
+                                    }
+
+                                    section {
+                                        display: inline-block;
+                                        width: 100%;
+
+                                        .items-list {
+                                            padding-bottom: 10px;
+                                            padding-top: 10px;
+
+                                            li {
+                                                margin-bottom: 10px;
+
+                                                .title {
+                                                    font-size: 14px;
+                                                    line-height: 18px;
+                                                    margin-bottom: 5px;
+                                                    font-weight: 400;
+                                                    color: #555;
+                                                }
+
+                                                .sub-title {
+                                                    color: #b2b2b2;
+                                                    font-size: 14px;
+                                                    font-weight: 400;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .f-social-account {
+                                border-bottom: 0;
+                                margin-bottom: 0;
+                                padding-bottom: 0;
+
+                                .social-acc {
+                                    position: relative;
+                                    min-height: 0;
+                                    padding: 0;
+                                    padding-top: 0;
+                                    border-bottom: 0;
+                                    padding-bottom: 13px;
+
+                                    aside {
+                                        vertical-align: top;
+                                        display: block;
+                                        width: auto;
+
+                                        .hint-social {
+                                            line-height: 120%;
+                                            color: #0e0e0f;
+                                            font-size: 16px;
+                                            font-weight: 700;
+                                            padding-bottom: 7px;
+                                        }
+                                    }
+                                    section{
+                                        display: inline-block;
+                                        width: 100%;
+                                        .connect{
+                                            transition: all .3s;
+                                            border-radius: 4px;
+                                            cursor: pointer;
+                                            width: 137px;
+                                            font-size: 14px;
+                                            display: block;
+                                            border: 0;
+                                            margin: 0;
+                                            padding: 7px 0 7px 26px;
+                                            color: #00698c;
+                                            i{
+                                                font-size: 14px;
+                                                margin-left: -25px;
+                                                font-family: FontAwesome;
+                                                position: absolute;
+                                                z-index: 1;
+                                            }
+                                            span{
+                                                color: #00698c;
+                                            
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .gigs-col {}
+    }
+}

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { userService } from '../../Services/userService';
-
+import { getData } from '../../Utils/localStore';
 export const getAllUsers = createAsyncThunk('users/getAllUsers',
     async () => {
         const res = await userService.getUsers();
@@ -16,7 +16,7 @@ export const getAllUsers = createAsyncThunk('users/getAllUsers',
 //     })
 
 const initialState = {
-    //hoTen: getData('user'),
+    hoTen: getData('user'),
     //luu trữ các người dùng call từ api 
     users: [],
 }
@@ -26,7 +26,9 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         setUsers: (state, action) => {
-            state.users = action.payload;
+            if (state.hoTen == null) {
+                state.hoTen = action.payload;
+            }
         },
         updateUsers: (state, action) => {
             const updatedUsers = action.payload;

@@ -19,6 +19,7 @@ const VideoLoopModel = ({card, onClose}) => {
                         className='play-video'
                         controls
                         loop
+                        playing
                     />
                 </section>
             </div>

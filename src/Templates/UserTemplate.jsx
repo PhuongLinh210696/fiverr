@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Banner from '../Components/Banner/Banner'
 import Footer from '../Components/Footer/Footer'
 import Header from '../Components/Header/Header'
+import { getData } from '../Utils/localStore'
 
 const UserTemplate = () => {
   return (
